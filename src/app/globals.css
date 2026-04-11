@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 767px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Brigends display font utility */
+.font-brigends {
+  font-family: var(--font-brigends), Arial, Helvetica, sans-serif;
+}
+
+.font-mangsi {
+  font-family: var(--font-mangsi), Arial, Helvetica, sans-serif;
+}
+
+/* Hasweny font utility */
+.font-hasweny {
+  font-family: var(--font-hasweny), Arial, Helvetica, sans-serif;
+}
+
+/* Balanced wrapping for headings/paragraphs */
+.balance {
+  text-wrap: balance;
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Floating arrow animations */
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-soft {
+  animation: floatY 0.8s ease-in-out infinite alternate;
+}
+
+.float-soft.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.float-soft.delay-2 {
+  animation-delay: 0.8s;
+}
+
+.float-soft.delay-3 {
+  animation-delay: 1.2s;
+}
+
+/* Directional float animations (poking towards the arrow tip) */
+@keyframes float-tl {
+  0% {
+    translate: 0px 0px;
+  }
+
+  100% {
+    translate: -4px -4px;
+  }
+}
+
+@keyframes float-br {
+  0% {
+    translate: 0px 0px;
+  }
+
+  100% {
+    translate: 4px 4px;
+  }
+}
+
+@keyframes float-bl {
+  0% {
+    translate: 0px 0px;
+  }
+
+  100% {
+    translate: -4px 4px;
+  }
+}
+
+@keyframes float-tr {
+  0% {
+    translate: 0px 0px;
+  }
+
+  100% {
+    translate: 4px -4px;
+  }
+}
+
+.float-tl {
+  animation: float-tl 0.8s ease-in-out infinite alternate;
+}
+
+.float-br {
+  animation: float-br 0.8s ease-in-out infinite alternate;
+}
+
+.float-bl {
+  animation: float-bl 0.8s ease-in-out infinite alternate;
+}
+
+.float-tr {
+  animation: float-tr 0.8s ease-in-out infinite alternate;
+}
+
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.8s;
+}
+
+.delay-3 {
+  animation-delay: 1.2s;
+}
+
+/* Outline text helper for vertical banners */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
+  color: transparent;
+}
+
+.text-outline-light {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
+  color: transparent;
+}
+
+.decor-faint {
+  opacity: 0.8;
+}
+
+/* Simple horizontal marquee */
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  /* matches gap-16 */
+  width: max-content;
+  will-change: transform;
+  animation: scrollX 22s linear infinite;
+}
+
+/* Reverse direction helper */
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+/* Extra spacing between images inside marquee without changing JSX */
+.marquee-track img {
+  margin-right: 2.5rem;
+  /* ~gap-10 */
+}
+
+@media (min-width: 768px) {
+  .marquee-track img {
+    margin-right: 4rem;
+  }
+
+  /* ~gap-16 on md+ */
+}
+
+/* Custom cursor animations */
+@keyframes cursorOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
