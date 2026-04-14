@@ -144,8 +144,8 @@ export default function Home() {
               return (
                 <DynamicObj
                   src="/3d/me/tripo_convert_66f635b3-d076-490e-91bc-1dac68d3deaf.obj"
-                  height={550}
-                  scale={1.6}
+                  height={400}
+                  scale={1.1}
                   position={[0, -0.2, 0]}
                   autoRotate
                   rotateAxis="y"
