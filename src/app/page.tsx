@@ -104,7 +104,7 @@ export default function Home() {
       </main>
 
       {/* Core Section */}
-      <section id="core" className="relative container-wide px-6 md:px-8 py-16 md:py-24">
+      <section id="core" className="relative container-wide px-6 md:px-8 py-16 md:py-24 overflow-x-hidden">
         {/* vertical banners at edges */}
         <div className="pointer-events-none absolute left-20 top-135 -translate-y-1/2 hidden lg:block">
           <div className="font-brigends text-outline text-7xl tracking-[0.3em] rotate-[-90deg] -translate-x-195">HELLO THERE!</div>
@@ -114,11 +114,11 @@ export default function Home() {
         </div>
 
         {/* mobile vertical banners */}
-        <div className="pointer-events-none absolute -left-2 top-[60%] -translate-y-1/2 md:hidden z-0">
-          <div className="font-brigends text-outline-light text-4xl tracking-[0.25em]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>HELLO THERE!</div>
+        <div className="pointer-events-none absolute left-0 top-[60%] -translate-y-1/2 md:hidden z-0 opacity-40">
+          <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>HELLO THERE!</div>
         </div>
-        <div className="pointer-events-none absolute -right-2 top-[60%] -translate-y-1/2 md:hidden z-0 text-right">
-          <div className="font-brigends text-outline-light text-4xl tracking-[0.25em]" style={{ writingMode: 'vertical-rl' }}>HELLO THERE!</div>
+        <div className="pointer-events-none absolute right-0 top-[60%] -translate-y-1/2 md:hidden z-0 text-right opacity-40">
+          <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl' }}>HELLO THERE!</div>
         </div>
 
 
@@ -180,11 +180,11 @@ export default function Home() {
 
 
         {/* TOOLS marquee moved above grid */}
-        <div className="mt-6 md:mt-2 relative z-20">
-          <div className="flex justify-center items-center">
+        <div className="mt-20 md:mt-2 relative z-20">
+          <div className="flex justify-center items-center md:pl-0 pl-16">
             <div className="text-center font-hasweny tracking-widest font-semibold text-2xl md:text-2xl">TOOLS</div>
           </div>
-          <div className="mt-12 md:mt-26 marquee w-screen relative left-1/2 md:left-140 -translate-x-1/2">
+          <div className="mt-12 md:mt-26 marquee w-full relative">
             <div className="marquee-track items-center">
               {/* One sequence */}
               <div className="inline-flex items-center gap-6 md:gap-10">
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
 
         {/* Second marquee row (reverse direction) */}
-        <div className="mt-16 marquee w-screen relative left-1/2 md:left-140 -translate-x-1/2">
+        <div className="mt-16 marquee w-full relative">
           <div className="marquee-track reverse items-center">
             {/* One sequence */}
             <div className="inline-flex items-center gap-6 md:gap-10">

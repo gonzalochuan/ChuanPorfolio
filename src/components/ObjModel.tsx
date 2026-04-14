@@ -131,7 +131,11 @@ export default function ObjModel({
 }) {
   return (
     <div style={{ height }} className="w-full">
-      <Canvas camera={{ position: [0, 0, 2.4], fov: 45 }} shadows>
+      <Canvas
+        camera={{ position: [0, 0, 2.4], fov: 45 }}
+        shadows
+        style={{ touchAction: 'pan-y' }}
+      >
         <ambientLight intensity={0.8} />
         <directionalLight position={[2, 2, 2]} intensity={0.9} castShadow />
         <Suspense fallback={null}>
