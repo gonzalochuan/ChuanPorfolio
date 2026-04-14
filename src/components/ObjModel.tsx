@@ -137,6 +137,12 @@ export default function ObjModel({
         camera={{ position: [0, 0, 2.4], fov: 45 }}
         shadows
         style={{ touchAction: 'pan-y' }}
+        dpr={[1, 1.5]}
+        gl={{ 
+          antialias: false, 
+          powerPreference: 'high-performance',
+          preserveDrawingBuffer: false 
+        }}
       >
         <ambientLight intensity={0.8} />
         <directionalLight position={[2, 2, 2]} intensity={0.9} castShadow />

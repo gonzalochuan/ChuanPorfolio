@@ -181,7 +181,7 @@ export default function Home() {
 
 
         {/* TOOLS marquee moved above grid */}
-        <div className="mt-80 md:mt-2 relative z-20">
+        <div className="mt-56 md:mt-2 relative z-20">
           <div className="flex justify-center items-center">
             <div className="text-center font-hasweny tracking-widest font-semibold text-2xl md:text-2xl">TOOLS</div>
           </div>
