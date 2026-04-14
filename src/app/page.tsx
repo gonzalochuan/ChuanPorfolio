@@ -303,15 +303,27 @@ export default function Home() {
             // @ts-ignore
             return (
               <ResumeScroll className="w-full max-w-[92vw] sm:max-w-[560px] md:max-w-[700px] lg:max-w-[820px]">
-                <CldImage
-                  src="resume"
-                  alt="Resume"
-                  width={1240}
-                  height={1754}
-                  sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
-                  priority
-                  className="w-full h-auto select-none drop-shadow-sm filter brightness-105 contrast-125 grayscale"
-                />
+                {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ? (
+                  <CldImage
+                    src="resume"
+                    alt="Resume"
+                    width={1240}
+                    height={1754}
+                    sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
+                    priority
+                    className="w-full h-auto select-none drop-shadow-sm filter brightness-105 contrast-125 grayscale"
+                  />
+                ) : (
+                  <Image
+                    src="/image/resume.png"
+                    alt="Resume"
+                    width={1240}
+                    height={1754}
+                    sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
+                    priority
+                    className="w-full h-auto select-none drop-shadow-sm filter brightness-105 contrast-125 grayscale"
+                  />
+                )}
               </ResumeScroll>
             );
           })()}
