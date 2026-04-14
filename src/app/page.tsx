@@ -114,10 +114,10 @@ export default function Home() {
         </div>
 
         {/* mobile vertical banners */}
-        <div className="pointer-events-none absolute left-0 top-[60%] -translate-y-1/2 md:hidden z-0 opacity-40">
+        <div className="pointer-events-none absolute left-[2%] top-[60%] -translate-y-1/2 md:hidden z-0 opacity-40">
           <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>HELLO THERE!</div>
         </div>
-        <div className="pointer-events-none absolute right-0 top-[60%] -translate-y-1/2 md:hidden z-0 text-right opacity-40">
+        <div className="pointer-events-none absolute right-[2%] top-[60%] -translate-y-1/2 md:hidden z-0 text-right opacity-40">
           <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl' }}>HELLO THERE!</div>
         </div>
 
@@ -144,12 +144,13 @@ export default function Home() {
               return (
                 <DynamicObj
                   src="/3d/me/tripo_convert_66f635b3-d076-490e-91bc-1dac68d3deaf.obj"
-                  height={450}
-                  scale={1.3}
+                  height={550}
+                  scale={1.6}
                   position={[0, -0.2, 0]}
                   autoRotate
                   rotateAxis="y"
                   rotateSpeed={0.4}
+                  pointerEvents="none"
                 />
               );
             })()}
@@ -180,7 +181,7 @@ export default function Home() {
 
 
         {/* TOOLS marquee moved above grid */}
-        <div className="mt-32 md:mt-2 relative z-20">
+        <div className="mt-80 md:mt-2 relative z-20">
           <div className="flex justify-center items-center">
             <div className="text-center font-hasweny tracking-widest font-semibold text-2xl md:text-2xl">TOOLS</div>
           </div>

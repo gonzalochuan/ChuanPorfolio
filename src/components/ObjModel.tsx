@@ -112,6 +112,7 @@ export default function ObjModel({
   tiltIntensity = 0.15,
   parallax = 0.08,
   damping = 6,
+  pointerEvents = "auto",
 }: {
   src: string;
   height?: number;
@@ -128,9 +129,10 @@ export default function ObjModel({
   tiltIntensity?: number;
   parallax?: number;
   damping?: number;
+  pointerEvents?: "auto" | "none";
 }) {
   return (
-    <div style={{ height }} className="w-full">
+    <div style={{ height, pointerEvents }} className="w-full">
       <Canvas
         camera={{ position: [0, 0, 2.4], fov: 45 }}
         shadows
