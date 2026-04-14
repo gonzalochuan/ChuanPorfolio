@@ -114,10 +114,10 @@ export default function Home() {
         </div>
 
         {/* mobile vertical banners */}
-        <div className="pointer-events-none absolute left-[2%] top-[55%] -translate-y-1/2 md:hidden z-0 opacity-40">
+        <div className="pointer-events-none absolute left-0 top-[55%] -translate-y-1/2 md:hidden z-10 opacity-40 overflow-hidden">
           <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>HELLO THERE!</div>
         </div>
-        <div className="pointer-events-none absolute right-[2%] top-[55%] -translate-y-1/2 md:hidden z-0 text-right opacity-40">
+        <div className="pointer-events-none absolute right-0 top-[55%] -translate-y-1/2 md:hidden z-10 opacity-40 overflow-hidden">
           <div className="font-brigends text-outline-light text-3xl tracking-[0.2em]" style={{ writingMode: 'vertical-rl' }}>HELLO THERE!</div>
         </div>
 
@@ -136,7 +136,7 @@ export default function Home() {
             </p>
           </div>
           {/* Mobile portrait */}
-          <div className="md:hidden mt-8 flex justify-center">
+          <div className="md:hidden mt-8 flex justify-center relative">
             {(() => {
               // @ts-ignore
               const DynamicObj = require("next/dynamic").default(() => import("@/components/ObjModel"), { ssr: false });
@@ -154,6 +154,11 @@ export default function Home() {
                 />
               );
             })()}
+            {/* Transparent overlay so touch events pass to page scroll instead of WebGL canvas */}
+            <div
+              className="absolute inset-0 z-20"
+              style={{ touchAction: 'pan-y' }}
+            />
           </div>
           <div className="hidden md:block left-25 relative">
             {/* 3D portrait */}
