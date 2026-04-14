@@ -185,7 +185,7 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <div className="text-center font-hasweny tracking-widest font-semibold text-2xl md:text-2xl">TOOLS</div>
           </div>
-          <div className="mt-12 md:mt-26 marquee w-full relative">
+          <div className="mt-12 md:mt-26 marquee w-full md:w-screen relative md:left-1/2 md:-translate-x-1/2">
             <div className="marquee-track items-center">
               {/* One sequence */}
               <div className="inline-flex items-center gap-6 md:gap-10">
@@ -249,7 +249,7 @@ export default function Home() {
         </div>
 
         {/* Second marquee row (reverse direction) */}
-        <div className="mt-16 marquee w-full relative">
+        <div className="mt-16 marquee w-full md:w-screen relative md:left-1/2 md:-translate-x-1/2">
           <div className="marquee-track reverse items-center">
             {/* One sequence */}
             <div className="inline-flex items-center gap-6 md:gap-10">
