@@ -144,8 +144,8 @@ export default function Home() {
               return (
                 <DynamicObj
                   src="/3d/me/tripo_convert_66f635b3-d076-490e-91bc-1dac68d3deaf.obj"
-                  height={300}
-                  scale={1.0}
+                  height={450}
+                  scale={1.3}
                   position={[0, -0.2, 0]}
                   autoRotate
                   rotateAxis="y"
@@ -180,8 +180,8 @@ export default function Home() {
 
 
         {/* TOOLS marquee moved above grid */}
-        <div className="mt-20 md:mt-2 relative z-20">
-          <div className="flex justify-center items-center md:pl-0 pl-16">
+        <div className="mt-32 md:mt-2 relative z-20">
+          <div className="flex justify-center items-center">
             <div className="text-center font-hasweny tracking-widest font-semibold text-2xl md:text-2xl">TOOLS</div>
           </div>
           <div className="mt-12 md:mt-26 marquee w-full relative">
