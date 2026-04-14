@@ -104,7 +104,7 @@ export default function Home() {
       </main>
 
       {/* Core Section */}
-      <section id="core" className="relative container-wide px-6 md:px-8 py-16 md:py-24 overflow-x-hidden">
+      <section id="core" className="relative container-wide px-6 md:px-8 py-16 md:py-24">
         {/* vertical banners at edges */}
         <div className="pointer-events-none absolute left-20 top-135 -translate-y-1/2 hidden lg:block">
           <div className="font-brigends text-outline text-7xl tracking-[0.3em] rotate-[-90deg] -translate-x-195">HELLO THERE!</div>
