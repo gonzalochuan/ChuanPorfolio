@@ -1,3 +1,5 @@
+"use client";
+
 type SectionProps = { title: string; children: React.ReactNode };
 function Section({ title, children }: SectionProps) {
   return (
@@ -9,6 +11,7 @@ function Section({ title, children }: SectionProps) {
 }
 
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 export default function Home() {
   return (
@@ -300,8 +303,8 @@ export default function Home() {
             // @ts-ignore
             return (
               <ResumeScroll className="w-full max-w-[92vw] sm:max-w-[560px] md:max-w-[700px] lg:max-w-[820px]">
-                <Image
-                  src="/image/resume.jpg"
+                <CldImage
+                  src="resume"
                   alt="Resume"
                   width={1240}
                   height={1754}
