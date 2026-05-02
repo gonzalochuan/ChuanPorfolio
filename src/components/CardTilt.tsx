@@ -128,11 +128,11 @@ export default function CardTilt({ children, maxTilt = 12, className = "", disab
         style={{ position: "relative" }}
       >
         {/* glare highlight */}
-        <div ref={glareRef} style={{ position: "absolute", inset: 0, borderRadius: 12, opacity: 0, transition: "opacity 200ms ease", pointerEvents: "none" }} />
+        <div ref={glareRef} style={{ position: "absolute", inset: 0, borderRadius: 26, opacity: 0, transition: "opacity 200ms ease", pointerEvents: "none" }} />
         <div
           ref={contentRef}
           style={{
-            borderRadius: 12,
+            borderRadius: 26,
             transformStyle: disabled ? undefined : "preserve-3d",
             transition: disabled ? undefined : "transform 200ms ease",
           }}

@@ -105,9 +105,8 @@ export default function CustomCursor() {
     <div
       ref={ref}
       aria-hidden
-      className={`fixed top-0 left-0 z-[9999] pointer-events-none hidden md:block transition-opacity duration-150 ${
-        visible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`fixed top-0 left-0 z-[9999] pointer-events-none hidden md:block transition-opacity duration-150 ${visible ? "opacity-100" : "opacity-0"
+        }`}
       style={{
         // center the ring on the pointer
         translate: `${-size / 2}px ${-size / 2}px`,

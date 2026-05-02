@@ -10,10 +10,17 @@ function Section({ title, children }: SectionProps) {
   );
 }
 
+import React, { useState } from "react";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
+import CardTilt from "@/components/CardTilt";
 
 export default function Home() {
+  const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
+  const chatboxVideos = ["/video/mockup4.mp4", "/video/mockup5.mp4", "/video/mockup6.mp4"];
+  const [currentGabayVideo, setCurrentGabayVideo] = useState(0);
+  const [currentChatboxVideo, setCurrentChatboxVideo] = useState(0);
+
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Fixed background arrows across the entire page */}
@@ -66,11 +73,11 @@ export default function Home() {
             <span className="relative block">
               H
               {/* Mobile */}
-              <img src="/svg/history.svg" alt="History" className="absolute left-[32vw] top-[37vw] w-[10vw] float-br delay-1 pointer-events-none md:hidden" />
-              <span className="absolute left-[46vw] top-[47vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Highlights</span>
+              <img src="/svg/history.svg" alt="Hub" className="absolute left-[32vw] top-[37vw] w-[10vw] float-br delay-1 pointer-events-none md:hidden" />
+              <span className="absolute left-[46vw] top-[47vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Hub</span>
               {/* Desktop */}
-              <img src="/svg/history.svg" alt="History" className="hidden md:block absolute left-[1.0vw] top-[10.1vw] w-[3.4vw] float-br delay-1 pointer-events-none" />
-              <span className="hidden md:block absolute left-[5.4vw] top-[13.4vw] text-[1.64vw] font-semibold z-10 font-hasweny">Highlights</span>
+              <img src="/svg/history.svg" alt="Hub" className="hidden md:block absolute left-[1.0vw] top-[10.1vw] w-[3.4vw] float-br delay-1 pointer-events-none" />
+              <span className="hidden md:block absolute left-[5.4vw] top-[13.4vw] text-[1.64vw] font-semibold z-10 font-hasweny">Hub</span>
             </span>
             <span className="relative block">
               U
@@ -84,11 +91,11 @@ export default function Home() {
             <span className="relative block">
               A
               {/* Mobile */}
-              <img src="/svg/accreditations.svg" alt="Accreditations" className="absolute -left-[8vw] -top-[3vw] w-[10vw] -scale-y-100 float-tl pointer-events-none md:hidden" />
-              <span className="absolute -left-[12vw] -top-[10vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Accreditations</span>
+              <img src="/svg/accreditations.svg" alt="Achievements" className="absolute -left-[8vw] -top-[3vw] w-[10vw] -scale-y-100 float-tl pointer-events-none md:hidden" />
+              <span className="absolute -left-[12vw] -top-[10vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Achievements</span>
               {/* Desktop */}
-              <img src="/svg/accreditations.svg" alt="Accreditations" className="hidden md:block absolute left-[6.8vw] top-[10.2vw] w-[3.2vw] float-bl pointer-events-none" />
-              <span className="hidden md:block absolute left-[2.4vw] top-[21.5vw] text-[1.64vw] font-semibold z-10 font-hasweny">Accreditations</span>
+              <img src="/svg/accreditations.svg" alt="Achievements" className="hidden md:block absolute left-[6.8vw] top-[10.2vw] w-[3.2vw] float-bl pointer-events-none" />
+              <span className="hidden md:block absolute left-[2.4vw] top-[21.5vw] text-[1.64vw] font-semibold z-10 font-hasweny">Achievements</span>
             </span>
             <span className="relative block">
               N
@@ -299,9 +306,166 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HISTORY (below Tools) */}
-      <section id="history" className="relative container-wide top-5 px-6 md:px-8 py-16 md:py-24">
-        <h2 className="font-brigends text-3xl md:text-5xl text-center mb-8 md:mb-12">Highlights</h2>
+      {/* HUB (Projects Section) */}
+      <section id="hub" className="relative container-wide px-6 md:px-8 pt-16 md:pt-32 mt-12 md:mt-24 bg-white">
+        {/* Background Decors */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
+          <img src="/svg/arrow2.svg" alt="" className="absolute left-[10%] top-[20%] w-[120px] decor-faint -rotate-12" />
+          <img src="/svg/arrow4.svg" alt="" className="absolute right-[5%] bottom-[10%] w-[160px] decor-faint rotate-12" />
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center mb-16 md:mb-24">
+          <h2 className="font-brigends text-4xl md:text-6xl text-center">HUB</h2>
+          <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-zinc-400"></span>
+            Selected Projects
+            <span className="w-8 h-[1px] bg-zinc-400"></span>
+          </p>
+        </div>
+      </section>
+
+      {/* HUB PROJECTS (Boxed Version) */}
+      <section className="relative container-wide px-6 md:px-8 py-10 md:py-16 bg-white">
+        <div className="flex flex-col gap-16 md:gap-24 max-w-[1400px] mx-auto relative z-10">
+
+          {/* Project 1: Gabay (Boxed Video) */}
+          <CardTilt maxTilt={3} disabled={true}>
+            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
+              {/* Main Video Sequence (Looping between Mockup 1 and 2) */}
+              <video
+                key={currentGabayVideo}
+                src={gabayVideos[currentGabayVideo]}
+                autoPlay
+                muted
+                playsInline
+                onEnded={() => setCurrentGabayVideo((prev) => (prev + 1) % gabayVideos.length)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
+              />
+
+              {/* Dark Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+
+              {/* Content */}
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                  <div className="max-w-2xl">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase">Mobile AR</span>
+                    </div>
+                    <h4 className="font-hasweny font-bold text-lg md:text-2xl lg:text-3xl mb-4 md:mb-6 text-zinc-100 leading-relaxed">Campus Navigation Mobile Application</h4>
+                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base lg:text-lg text-zinc-300 mb-6 md:mb-8 font-hasweny list-none">
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {["Flutter", "Unity", "AR", "Mobile"].map(t => (
+                      <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardTilt>
+
+          {/* Project 2: ChatBox */}
+          <CardTilt maxTilt={3} disabled={true}>
+            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
+              {/* Main Video Sequence (Looping between Mockup 4, 5, and 6) */}
+              <video
+                key={currentChatboxVideo}
+                src={chatboxVideos[currentChatboxVideo]}
+                autoPlay
+                muted
+                playsInline
+                onEnded={() => setCurrentChatboxVideo((prev) => (prev + 1) % chatboxVideos.length)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+              />
+
+              {/* Dark Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+
+              {/* Content */}
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10">
+                <div className="max-w-3xl">
+                  <div className="flex items-center gap-4 mb-4 md:mb-6">
+                    <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
+                  </div>
+                  <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System (PWA)</h4>
+                  <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
+                    <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
+                    <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented offline support using PWA technologies.</span></li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
+                      <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="lg:self-end flex-shrink-0 mt-2 lg:mt-0">
+                  <a href="http://chat-box-seait.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex font-hasweny text-xs md:text-base px-6 md:px-10 py-3 md:py-5 bg-white text-black tracking-widest hover:bg-zinc-200 transition-colors items-center gap-3 font-bold uppercase rounded-2xl shadow-xl">
+                    Visit Site <span className="text-xl md:text-2xl leading-none mb-[2px]">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </CardTilt>
+
+          {/* Project 3: BMS */}
+          <CardTilt maxTilt={3} disabled={true}>
+            <div className="bg-white border border-zinc-200 rounded-[28px] p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10 group hover:border-black transition-colors duration-500 shadow-2xl relative overflow-hidden min-h-[400px] md:min-h-[500px]">
+              <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-100 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="relative z-10 max-w-3xl">
+                <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                  <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-black">Barangay</h3>
+                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-zinc-100 rounded-full tracking-wider font-semibold border border-zinc-200 shrink-0 uppercase">Web System</span>
+                </div>
+                <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Enhancing Service Efficiency and Community Engagement</h4>
+                <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
+                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Comprehensive online portal tailored for managing barangay operations effectively.</span></li>
+                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Focused on enhancing local government service efficiency.</span></li>
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {["TypeScript", "Database", "Management"].map(t => (
+                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-50 rounded-md">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </CardTilt>
+
+          {/* Project 4: River Ranch */}
+          <CardTilt maxTilt={3} disabled={true}>
+            <div className="bg-zinc-50 border border-zinc-200 rounded-[28px] p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10 group hover:border-black transition-colors duration-500 shadow-2xl relative overflow-hidden min-h-[400px] md:min-h-[500px]">
+              <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-200/50 rounded-full blur-[120px] pointer-events-none group-hover:bg-zinc-300/60 transition-colors duration-700"></div>
+              <div className="relative z-10 max-w-3xl">
+                <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                  <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-black">River Ranch</h3>
+                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white rounded-full tracking-wider font-semibold border border-zinc-200 uppercase">Booking App</span>
+                </div>
+                <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Online Booking System for River Ranch</h4>
+                <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
+                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Developed an online reservation and booking platform for resort customers.</span></li>
+                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Streamlined availability management and customer scheduling.</span></li>
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {["TypeScript", "Booking", "UI Design"].map(t => (
+                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-3 md:px-4 py-1.5 md:py-2 bg-white rounded-md">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </CardTilt>
+
+        </div>
+      </section>
+
+      {/* UNDERTAKINGS (below Tools) */}
+      <section id="undertakings" className="relative container-wide top-5 px-6 md:px-8 py-16 md:py-24">
+        <h2 className="font-brigends text-3xl md:text-5xl text-center mb-8 md:mb-12">Undertakings</h2>
         <div className="flex justify-center pb-20 pt-10">
           {(() => {
             // @ts-ignore
