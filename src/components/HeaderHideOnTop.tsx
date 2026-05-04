@@ -4,7 +4,7 @@ import React from "react";
 
 const links = [
   { label: "Core", href: "#core" },
-  { label: "Highlights", href: "#hub" },
+  { label: "Hub", href: "#hub" },
   { label: "Undertakings", href: "#undertakings" },
   { label: "Accreditations", href: "#accreditations" },
   { label: "Network", href: "#network" },
@@ -60,7 +60,7 @@ export default function HeaderHideOnTop() {
           (open ? "opacity-100 scale-100 max-h-96" : "opacity-0 scale-95 max-h-0")
         }
       >
-        <div className="bg-white/90 backdrop-blur-xl border border-black/5 rounded-xl shadow-2xl px-2 py-2 flex flex-col gap-0.5 min-w-[130px]">
+        <div className="bg-white/90 backdrop-blur-xl border border-black/5 rounded-xl px-2 py-2 flex flex-col gap-0.5 min-w-[130px]">
           {links.map((l) => (
             <a
               key={l.href}
