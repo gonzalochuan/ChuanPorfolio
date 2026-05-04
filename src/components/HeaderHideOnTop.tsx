@@ -43,64 +43,23 @@ export default function HeaderHideOnTop() {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <div
-      ref={menuRef}
+    <nav
       className={
-        "fixed top-4 right-4 z-50 flex flex-col items-end transition-all duration-300 " +
-        (atTop ? "opacity-0 pointer-events-none translate-y-[-6px]" : "opacity-100 translate-y-0")
+        "fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 " +
+        (atTop ? "opacity-0 pointer-events-none -translate-y-4" : "opacity-100 translate-y-0")
       }
     >
-      {/* Dropdown menu */}
-      <div
-        className={
-          "mb-2 overflow-hidden transition-all duration-300 ease-in-out origin-top-right " +
-          (open ? "opacity-100 scale-100 max-h-96" : "opacity-0 scale-95 max-h-0")
-        }
-      >
-        <div className="bg-white/95 backdrop-blur-xl border border-black/10 rounded-2xl shadow-2xl px-5 py-4 flex flex-col gap-1 min-w-[160px]">
-          <Link
-            href="/"
-            className="font-hasweny font-bold text-xs tracking-widest text-black/40 uppercase mb-2 px-2"
-            onClick={handleLinkClick}
+      <div className="bg-white/80 backdrop-blur-lg border border-black/5 rounded-full shadow-lg px-4 py-2 flex items-center gap-4 md:gap-6">
+        {links.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="font-hasweny font-bold text-[9px] md:text-[11px] tracking-widest text-black/70 hover:text-black uppercase transition-colors duration-200"
           >
-            CHUAN
-          </Link>
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={handleLinkClick}
-              className="font-hasweny font-bold text-sm tracking-wider text-black uppercase px-2 py-2 rounded-xl hover:bg-black/5 transition-colors duration-150"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
+            {l.label}
+          </a>
+        ))}
       </div>
-
-      {/* Toggle button */}
-      <button
-        onClick={() => setOpen((v) => !v)}
-        aria-label="Toggle navigation"
-        className={
-          "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg " +
-          (open
-            ? "bg-black text-white"
-            : "bg-white/90 backdrop-blur-md text-black border border-black/10")
-        }
-      >
-        {open ? (
-          // X icon
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        ) : (
-          // Hamburger icon
-          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 1H16M0 6H16M0 11H16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
-        )}
-      </button>
-    </div>
+    </nav>
   );
 }
