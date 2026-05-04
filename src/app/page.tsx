@@ -59,13 +59,13 @@ export default function Home() {
 
       <main className="min-h-[calc(100dvh-96px)] flex items-center justify-center">
         <div className="w-full px-6 md:px-8" aria-label="CHUAN">
-          <div className="font-brigends select-none leading-none flex flex-col items-center gap-[16vw] text-[40vw] relative
+          <div className="font-brigends select-none leading-none flex flex-col items-center gap-[12vw] text-[32vw] relative
                           md:gap-[8vw] md:flex-row md:justify-between md:items-center md:gap-0 md:text-[13vw] lg:text-[11vw]">
             <span className="relative block">
               C
               {/* Mobile arrow + label */}
               <img src="/svg/core.svg" alt="Core" className="absolute -left-[10vw] -top-[1vw] w-[10vw] float-tl pointer-events-none md:hidden" />
-              <span className="absolute -left-[11vw] -top-[9vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Core</span>
+              <span className="absolute -left-[11vw] -top-[9vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Core</span>
               {/* Desktop arrow + label */}
               <img src="/svg/core.svg" alt="Core" className="hidden md:block absolute left-[3.3vw] -top-[4.3vw] w-[3.2vw] float-tl pointer-events-none" />
               <span className="hidden md:block absolute left-[2.2vw] -top-[7.2vw] text-[1.64vw] font-semibold z-10 font-hasweny">Core</span>
@@ -74,7 +74,7 @@ export default function Home() {
               H
               {/* Mobile */}
               <img src="/svg/history.svg" alt="Hub" className="absolute left-[32vw] top-[37vw] w-[10vw] float-br delay-1 pointer-events-none md:hidden" />
-              <span className="absolute left-[46vw] top-[47vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Hub</span>
+              <span className="absolute left-[46vw] top-[47vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Hub</span>
               {/* Desktop */}
               <img src="/svg/history.svg" alt="Hub" className="hidden md:block absolute left-[1.0vw] top-[10.1vw] w-[3.4vw] float-br delay-1 pointer-events-none" />
               <span className="hidden md:block absolute left-[5.4vw] top-[13.4vw] text-[1.64vw] font-semibold z-10 font-hasweny">Hub</span>
@@ -83,7 +83,7 @@ export default function Home() {
               U
               {/* Mobile */}
               <img src="/svg/undertakings.svg" alt="Undertakings" className="absolute -left-[12vw] -top-[2vw] w-[10vw] -scale-x-100 float-tl delay-2 pointer-events-none md:hidden" />
-              <span className="absolute -left-[15vw] -top-[10.1vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Undertakings</span>
+              <span className="absolute -left-[15vw] -top-[10.1vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Undertakings</span>
               {/* Desktop */}
               <img src="/svg/undertakings.svg" alt="Undertakings" className="hidden md:block absolute left-[11.2vw] -top-[1.5vw] w-[3.1vw] float-tl delay-2 pointer-events-none" />
               <span className="hidden md:block absolute left-[9.1vw] -top-[4.4vw] text-[1.64vw] font-semibold z-10 font-hasweny">Undertakings</span>
@@ -92,7 +92,7 @@ export default function Home() {
               A
               {/* Mobile */}
               <img src="/svg/accreditations.svg" alt="Achievements" className="absolute -left-[8vw] -top-[3vw] w-[10vw] -scale-y-100 float-tl pointer-events-none md:hidden" />
-              <span className="absolute -left-[12vw] -top-[10vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Achievements</span>
+              <span className="absolute -left-[12vw] -top-[10vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Achievements</span>
               {/* Desktop */}
               <img src="/svg/accreditations.svg" alt="Achievements" className="hidden md:block absolute left-[6.8vw] top-[10.2vw] w-[3.2vw] float-bl pointer-events-none" />
               <span className="hidden md:block absolute left-[2.4vw] top-[21.5vw] text-[1.64vw] font-semibold z-10 font-hasweny">Achievements</span>
@@ -101,7 +101,7 @@ export default function Home() {
               N
               {/* Mobile */}
               <img src="/svg/network.svg" alt="Network" className="absolute -right-[10vw] -top-[3vw] w-[10vw] float-tl delay-3 pointer-events-none md:hidden" />
-              <span className="absolute right-[2vw] -top-[6vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden">Network</span>
+              <span className="absolute right-[2vw] -top-[6vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Network</span>
               {/* Desktop */}
               <img src="/svg/network.svg" alt="Network" className="hidden md:block absolute -left-[4.2vw] -scale-x-100 -top-[2.1vw] w-[3.6vw] float-tl delay-3 pointer-events-none" />
               <span className="hidden md:block absolute right-[6.1vw] -top-[4.2vw] text-[1.64vw] font-semibold z-10 font-hasweny">Network</span>
@@ -161,11 +161,6 @@ export default function Home() {
                 />
               );
             })()}
-            {/* Transparent overlay so touch events pass to page scroll instead of WebGL canvas */}
-            <div
-              className="absolute inset-0 z-20"
-              style={{ touchAction: 'pan-y' }}
-            />
           </div>
           <div className="hidden md:block left-25 relative">
             {/* 3D portrait */}
@@ -349,18 +344,18 @@ export default function Home() {
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
                   <div className="max-w-2xl">
-                    <div className="flex items-center gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase">Mobile AR</span>
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Mobile AR</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
                     <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["Flutter", "Unity", "AR", "Mobile"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
                       ))}
                     </div>
                   </div>
@@ -390,18 +385,18 @@ export default function Home() {
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
                   <div className="max-w-2xl">
-                    <div className="flex items-center gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase">Progressive Web App</span>
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Progressive Web App</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
                     <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented light-weight application support using PWA technologies.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
                       ))}
                     </div>
                   </div>
@@ -430,9 +425,9 @@ export default function Home() {
                   <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Comprehensive online portal tailored for managing barangay operations effectively.</span></li>
                   <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Focused on enhancing local government service efficiency.</span></li>
                 </ul>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 md:gap-2">
                   {["TypeScript", "Database", "Management"].map(t => (
-                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-50 rounded-md">{t}</span>
+                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-50 rounded-md">{t}</span>
                   ))}
                 </div>
               </div>
@@ -446,16 +441,16 @@ export default function Home() {
               <div className="relative z-10 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
                   <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-black">River Ranch</h3>
-                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white rounded-full tracking-wider font-semibold border border-zinc-200 uppercase">Booking App</span>
+                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white rounded-full tracking-wider font-semibold border border-zinc-200 shrink-0 uppercase">Booking App</span>
                 </div>
                 <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Online Booking System for River Ranch</h4>
                 <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
                   <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Developed an online reservation and booking platform for resort customers.</span></li>
                   <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Streamlined availability management and customer scheduling.</span></li>
                 </ul>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 md:gap-2">
                   {["TypeScript", "Booking", "UI Design"].map(t => (
-                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-3 md:px-4 py-1.5 md:py-2 bg-white rounded-md">{t}</span>
+                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-2.5 md:px-4 py-1.5 md:py-2 bg-white rounded-md">{t}</span>
                   ))}
                 </div>
               </div>
