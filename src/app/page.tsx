@@ -461,37 +461,30 @@ export default function Home() {
       {/* UNDERTAKINGS (below Tools) */}
       <section id="undertakings" className="relative container-wide top-5 px-6 md:px-8 py-16 md:py-24">
         <h2 className="font-brigends text-3xl md:text-5xl text-center mb-8 md:mb-12">Undertakings</h2>
-        <div className="flex justify-center pb-20 pt-10">
-          {(() => {
-            // @ts-ignore
-            const ResumeScroll = require("next/dynamic").default(() => import("@/components/ResumeScroll"), { ssr: false });
-            // @ts-ignore
-            return (
-              <ResumeScroll className="w-full max-w-[92vw] sm:max-w-[560px] md:max-w-[700px] lg:max-w-[820px]">
-                {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ? (
-                  <CldImage
-                    src="resume"
-                    alt="Resume"
-                    width={1240}
-                    height={1754}
-                    sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
-                    priority
-                    className="w-full h-auto select-none drop-shadow-sm filter brightness-105 contrast-125 grayscale"
-                  />
-                ) : (
-                  <Image
-                    src="/image/resume.png"
-                    alt="Resume"
-                    width={1240}
-                    height={1754}
-                    sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
-                    priority
-                    className="w-full h-auto select-none drop-shadow-sm filter brightness-105 contrast-125 grayscale"
-                  />
-                )}
-              </ResumeScroll>
-            );
-          })()}
+        <div className="flex justify-center pb-12 pt-6">
+          <div className="w-full max-w-[92vw] sm:max-w-[560px] md:max-w-[700px] lg:max-w-[820px] bg-white shadow-xl rounded-xl overflow-hidden border border-zinc-200">
+            {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ? (
+              <CldImage
+                src="resume"
+                alt="Resume"
+                width={1240}
+                height={1754}
+                sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
+                priority
+                className="w-full h-auto select-none filter brightness-105 contrast-110"
+              />
+            ) : (
+              <Image
+                src="/image/resume.png"
+                alt="Resume"
+                width={1240}
+                height={1754}
+                sizes="(max-width: 640px) 92vw, (max-width: 768px) 560px, (max-width: 1024px) 820px, 960px"
+                priority
+                className="w-full h-auto select-none filter brightness-105 contrast-110"
+              />
+            )}
+          </div>
         </div>
         <div className="mt-10 flex justify-center">
           <a href="/resumepdf/resume.pdf" download="Gonzalo_Chuan_Resume.pdf" className="inline-flex font-semibold items-center gap-2 px-4 py-2 rounded-lg border border-black/20 shadow-sm hover:shadow transition font-hasweny">
