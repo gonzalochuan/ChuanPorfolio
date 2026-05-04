@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="min-h-[calc(100dvh-96px)] flex items-center justify-center">
+      <main className="min-h-[calc(100dvh-96px)] pt-[12vh] md:pt-0 flex items-center justify-center">
         <div className="w-full px-6 md:px-8" aria-label="CHUAN">
           <div className="font-brigends select-none leading-none flex flex-col items-center gap-[12vw] text-[32vw] relative
                           md:gap-[8vw] md:flex-row md:justify-between md:items-center md:gap-0 md:text-[13vw] lg:text-[11vw]">
@@ -111,8 +111,8 @@ export default function Home() {
             <span className="relative block">
               H
               {/* Mobile */}
-              <img src="/svg/history.svg" alt="Hub" className="absolute left-[32vw] top-[37vw] w-[10vw] float-br delay-1 pointer-events-none md:hidden" />
-              <span className="absolute left-[46vw] top-[47vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Hub</span>
+              <img src="/svg/history.svg" alt="Hub" className="absolute left-[32vw] top-[30vw] w-[10vw] float-br delay-1 pointer-events-none md:hidden" />
+              <span className="absolute left-[46vw] top-[40vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Hub</span>
               {/* Desktop */}
               <img src="/svg/history.svg" alt="Hub" className="hidden md:block absolute left-[1.0vw] top-[10.1vw] w-[3.4vw] float-br delay-1 pointer-events-none" />
               <span className="hidden md:block absolute left-[5.4vw] top-[13.4vw] text-[1.64vw] font-semibold z-10 font-hasweny">Hub</span>
@@ -138,8 +138,8 @@ export default function Home() {
             <span className="relative block">
               N
               {/* Mobile */}
-              <img src="/svg/network.svg" alt="Network" className="absolute -right-[10vw] -top-[3vw] w-[10vw] float-tl delay-3 pointer-events-none md:hidden" />
-              <span className="absolute right-[2vw] -top-[6vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Network</span>
+              <img src="/svg/network.svg" alt="Network" className="absolute -right-[10vw] -top-[8vw] w-[10vw] float-tl delay-3 pointer-events-none md:hidden" />
+              <span className="absolute right-[2vw] -top-[11vw] text-[3vw] font-semibold z-10 font-hasweny md:hidden pointer-events-none">Network</span>
               {/* Desktop */}
               <img src="/svg/network.svg" alt="Network" className="hidden md:block absolute -left-[4.2vw] -scale-x-100 -top-[2.1vw] w-[3.6vw] float-tl delay-3 pointer-events-none" />
               <span className="hidden md:block absolute right-[6.1vw] -top-[4.2vw] text-[1.64vw] font-semibold z-10 font-hasweny">Network</span>
