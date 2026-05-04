@@ -427,8 +427,14 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-col items-end shrink-0">
-                    <a href="http://chat-box-seait.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex font-hasweny text-xs md:text-base px-6 md:px-10 py-3 md:py-5 bg-white text-black tracking-widest hover:bg-zinc-200 transition-colors items-center gap-3 font-bold uppercase rounded-2xl shadow-xl">
-                      Visit Site <span className="text-xl md:text-2xl leading-none mb-[2px]">↗</span>
+                    <a 
+                      href="http://chat-box-seait.vercel.app/" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20 text-white font-hasweny text-[10px] md:text-xs tracking-[0.15em] font-bold rounded-xl transition-all duration-300 hover:border-white/40"
+                    >
+                      <span className="relative z-10 uppercase">Visit Project</span>
+                      <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
                     </a>
                   </div>
                 </div>
