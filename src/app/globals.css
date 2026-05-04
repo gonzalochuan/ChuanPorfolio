@@ -26,9 +26,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* iOS Safari fix: overflow-x hidden on html instead of body prevents scroll blocking */
+/* overflow-x: clip blocks horizontal overflow WITHOUT creating a scroll container.
+   overflow-x: hidden was causing a second scrollbar on mobile/desktop. */
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 /* Brigends display font utility */

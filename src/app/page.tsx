@@ -482,7 +482,7 @@ export default function Home() {
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
                     <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Integrated an offline bot chat for instant community support and quick answers.</span></li>
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Streamlined record management and service requests for residents.</span></li>
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Organized record management and service requests for residents.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["TypeScript", "Database", "Offline Bot", "Management"].map(t => (
@@ -507,7 +507,7 @@ export default function Home() {
                 <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Online Booking System for River Ranch</h4>
                 <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
                   <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Developed an online reservation and booking platform for resort customers.</span></li>
-                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Streamlined availability management and customer scheduling.</span></li>
+                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Organized availability management and customer scheduling.</span></li>
                 </ul>
                 <div className="flex flex-wrap gap-1.5 md:gap-2">
                   {["TypeScript", "Booking", "UI Design"].map(t => (
