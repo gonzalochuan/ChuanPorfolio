@@ -17,7 +17,7 @@ import CardTilt from "@/components/CardTilt";
 
 export default function Home() {
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
-  const chatboxVideos = ["/video/mockup4.mp4", "/video/mockup5.mp4", "/video/mockup6.mp4"];
+  const chatboxVideos = ["/video/mockup5.mp4", "/video/mockup4.mp4", "/video/mockup6.mp4"];
   const [currentGabayVideo, setCurrentGabayVideo] = useState(0);
   const [currentChatboxVideo, setCurrentChatboxVideo] = useState(0);
 
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="min-h-[calc(100vh-96px)] flex items-center justify-center">
+      <main className="min-h-[calc(100dvh-96px)] flex items-center justify-center">
         <div className="w-full px-6 md:px-8" aria-label="CHUAN">
           <div className="font-brigends select-none leading-none flex flex-col items-center gap-[16vw] text-[40vw] relative
                           md:gap-[8vw] md:flex-row md:justify-between md:items-center md:gap-0 md:text-[13vw] lg:text-[11vw]">
@@ -349,21 +349,20 @@ export default function Home() {
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
                   <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
+                    <div className="flex items-center gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
                       <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase">Mobile AR</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-2xl lg:text-3xl mb-4 md:mb-6 text-zinc-100 leading-relaxed">Campus Navigation Mobile Application</h4>
-                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base lg:text-lg text-zinc-300 mb-6 md:mb-8 font-hasweny list-none">
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
+                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
                       <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
                     </ul>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {["Flutter", "Unity", "AR", "Mobile"].map(t => (
-                      <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {["Flutter", "Unity", "AR", "Mobile"].map(t => (
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -388,27 +387,30 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
 
               {/* Content */}
-              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10">
-                <div className="max-w-3xl">
-                  <div className="flex items-center gap-4 mb-4 md:mb-6">
-                    <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                  <div className="max-w-2xl">
+                    <div className="flex items-center gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase">Progressive Web App</span>
+                    </div>
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
+                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented light-weight application support using PWA technologies.</span></li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                      ))}
+                    </div>
                   </div>
-                  <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System (PWA)</h4>
-                  <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
-                    <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
-                    <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented offline support using PWA technologies.</span></li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2">
-                    {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
-                      <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-3 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                    ))}
-                  </div>
-                </div>
 
-                <div className="lg:self-end flex-shrink-0 mt-2 lg:mt-0">
-                  <a href="http://chat-box-seait.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex font-hasweny text-xs md:text-base px-6 md:px-10 py-3 md:py-5 bg-white text-black tracking-widest hover:bg-zinc-200 transition-colors items-center gap-3 font-bold uppercase rounded-2xl shadow-xl">
-                    Visit Site <span className="text-xl md:text-2xl leading-none mb-[2px]">↗</span>
-                  </a>
+                  <div className="flex flex-col items-end shrink-0">
+                    <a href="http://chat-box-seait.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex font-hasweny text-xs md:text-base px-6 md:px-10 py-3 md:py-5 bg-white text-black tracking-widest hover:bg-zinc-200 transition-colors items-center gap-3 font-bold uppercase rounded-2xl shadow-xl">
+                      Visit Site <span className="text-xl md:text-2xl leading-none mb-[2px]">↗</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
