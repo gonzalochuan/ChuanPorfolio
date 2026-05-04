@@ -132,7 +132,7 @@ export default function ObjModel({
   pointerEvents?: "auto" | "none";
 }) {
   return (
-    <div style={{ height, pointerEvents }} className="w-full">
+    <div style={{ height, pointerEvents, touchAction: 'pan-y' }} className="w-full">
       <Canvas
         camera={{ position: [0, 0, 2.4], fov: 45 }}
         shadows

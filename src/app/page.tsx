@@ -167,7 +167,26 @@ export default function Home() {
               ✧ Full stack developer with experience building academic systems, capstone projects, and technical documentation. Graduating 4th-year student with freelance experience delivering functional, user-focused web solutions.
             </p>
           </div>
-          {/* Mobile portrait - hidden to prevent WebGL canvas from intercepting scroll */}
+          {/* Mobile portrait */}
+          <div className="md:hidden mt-8 flex justify-center relative" style={{ touchAction: 'pan-y' }}>
+            {(() => {
+              // @ts-ignore
+              const DynamicObj = require("next/dynamic").default(() => import("@/components/ObjModel"), { ssr: false });
+              // @ts-ignore
+              return (
+                <DynamicObj
+                  src="/3d/me/tripo_convert_66f635b3-d076-490e-91bc-1dac68d3deaf.obj"
+                  height={400}
+                  scale={1.1}
+                  position={[0, -0.2, 0]}
+                  autoRotate
+                  rotateAxis="y"
+                  rotateSpeed={0.4}
+                  pointerEvents="none"
+                />
+              );
+            })()}
+          </div>
           <div className="hidden md:block left-25 relative">
             {/* 3D portrait */}
             {/* eslint-disable-next-line @typescript-eslint/no-var-requires */}
