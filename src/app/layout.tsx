@@ -52,9 +52,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${brigends.variable} ${mangsi.variable} ${hasweny.variable} antialiased bg-white text-black md:cursor-none`}
       >
-        <HeaderHideOnTop />
-        <CustomCursor />
-        {children}
+        <div style={{ overflowX: 'clip', position: 'relative' }}>
+          <HeaderHideOnTop />
+          <CustomCursor />
+          {children}
+        </div>
       </body>
     </html>
   );
