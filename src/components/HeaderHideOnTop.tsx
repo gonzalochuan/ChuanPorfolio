@@ -28,9 +28,9 @@ export default function HeaderHideOnTop() {
           CHUAN
         </Link>
         <nav className="w-full md:w-auto">
-          <ul className="flex flex-wrap justify-center md:justify-end items-center gap-4 md:gap-8 text-sm md:text-base tracking-wide font-hasweny text-black">
+          <ul className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 md:gap-8 text-[10px] md:text-base tracking-wide font-hasweny text-black uppercase">
             <li><a className="hover:opacity-100 font-bold" href="#core">Core</a></li>
-            <li><a className="hover:opacity-100 font-bold" href="#history">Highlights</a></li>
+            <li><a className="hover:opacity-100 font-bold" href="#hub">Highlights</a></li>
             <li><a className="hover:opacity-100 font-bold" href="#undertakings">Undertakings</a></li>
             <li><a className="hover:opacity-100 font-bold" href="#accreditations">Accreditations</a></li>
             <li><a className="hover:opacity-100 font-bold" href="#network">Network</a></li>
