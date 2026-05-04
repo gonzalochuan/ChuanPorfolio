@@ -328,7 +328,6 @@ export default function Home() {
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
               {/* Main Video Sequence (Looping between Mockup 1 and 2) */}
               <video
-                key={currentGabayVideo}
                 src={gabayVideos[currentGabayVideo]}
                 autoPlay
                 muted
@@ -369,7 +368,6 @@ export default function Home() {
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
               {/* Main Video Sequence (Looping between Mockup 4, 5, and 6) */}
               <video
-                key={currentChatboxVideo}
                 src={chatboxVideos[currentChatboxVideo]}
                 autoPlay
                 muted

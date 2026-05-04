@@ -13,7 +13,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Removed smooth scroll to fix mobile responsiveness */
 }
 
 body {

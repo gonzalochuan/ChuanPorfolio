@@ -39,7 +39,8 @@ export default function ResumeScroll({
       <motion.div
         className="w-[96%] relative overflow-hidden bg-[#f4f4f4] shadow-[inset_0_0_40px_rgba(0,0,0,0.05)] origin-top border-x border-neutral-300"
         style={{
-          height: heightAnim
+          scaleY: scrollYProgress,
+          transformOrigin: "top"
         }}
       >
         {/* Rip/tear edge simulation at the top and bottom inside (optional) */}
