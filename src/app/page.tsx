@@ -18,11 +18,14 @@ import CardTilt from "@/components/CardTilt";
 export default function Home() {
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
   const chatboxVideos = ["/video/mockup5.mp4", "/video/mockup4.mp4", "/video/mockup6.mp4"];
+  const barangayVideos = ["/video/mockup7.mp4", "/video/mockup8.mp4", "/video/mockup9.mp4"];
 
   const gabayVideoRef = useRef<HTMLVideoElement>(null);
   const gabayIndexRef = useRef(0);
   const chatboxVideoRef = useRef<HTMLVideoElement>(null);
   const chatboxIndexRef = useRef(0);
+  const barangayVideoRef = useRef<HTMLVideoElement>(null);
+  const barangayIndexRef = useRef(0);
 
   const playNext = useCallback((ref: React.RefObject<HTMLVideoElement | null>, playlist: string[], indexRef: React.MutableRefObject<number>) => {
     indexRef.current = (indexRef.current + 1) % playlist.length;
@@ -30,18 +33,18 @@ export default function Home() {
     if (!el) return;
     el.src = playlist[indexRef.current];
     el.load();
-    el.play().catch(() => {});
+    el.play().catch(() => { });
   }, []);
 
-  // Start playback imperatively on mount for both videos
+  // Start playback imperatively on mount for all videos
   useEffect(() => {
     const gabay = gabayVideoRef.current;
     if (gabay) {
       gabay.src = gabayVideos[0];
       gabay.load();
-      gabay.play().catch(() => {});
+      gabay.play().catch(() => { });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -49,9 +52,19 @@ export default function Home() {
     if (chatbox) {
       chatbox.src = chatboxVideos[0];
       chatbox.load();
-      chatbox.play().catch(() => {});
+      chatbox.play().catch(() => { });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const barangay = barangayVideoRef.current;
+    if (barangay) {
+      barangay.src = barangayVideos[0];
+      barangay.load();
+      barangay.play().catch(() => { });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -427,14 +440,13 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-col items-end shrink-0">
-                    <a 
-                      href="http://chat-box-seait.vercel.app/" 
-                      target="_blank" 
-                      rel="noreferrer" 
+                    <a
+                      href="http://chat-box-seait.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
                       className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20 text-white font-hasweny text-[10px] md:text-xs tracking-[0.15em] font-bold rounded-xl transition-all duration-300 hover:border-white/40"
                     >
                       <span className="relative z-10 uppercase">Visit Project</span>
-                      <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
                     </a>
                   </div>
                 </div>
@@ -442,24 +454,42 @@ export default function Home() {
             </div>
           </CardTilt>
 
-          {/* Project 3: BMS */}
+          {/* Project 3: Barangay */}
           <CardTilt maxTilt={3} disabled={true}>
-            <div className="bg-white border border-zinc-200 rounded-[28px] p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10 group hover:border-black transition-colors duration-500 shadow-2xl relative overflow-hidden min-h-[400px] md:min-h-[500px]">
-              <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-100 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="relative z-10 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                  <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-black">Barangay</h3>
-                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-zinc-100 rounded-full tracking-wider font-semibold border border-zinc-200 shrink-0 uppercase">Web System</span>
-                </div>
-                <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Enhancing Service Efficiency and Community Engagement</h4>
-                <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
-                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Comprehensive online portal tailored for managing barangay operations effectively.</span></li>
-                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Focused on enhancing local government service efficiency.</span></li>
-                </ul>
-                <div className="flex flex-wrap gap-1.5 md:gap-2">
-                  {["TypeScript", "Database", "Management"].map(t => (
-                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-50 rounded-md">{t}</span>
-                  ))}
+            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
+              {/* Main Video Sequence (Looping between Mockup 7, 8, and 9) */}
+              <video
+                ref={barangayVideoRef}
+                muted
+                playsInline
+                preload="auto"
+                onEnded={() => playNext(barangayVideoRef, barangayVideos, barangayIndexRef)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+                style={{ willChange: 'transform' }}
+              />
+
+              {/* Dark Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+
+              {/* Content */}
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                  <div className="max-w-2xl">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Barangay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Community System</span>
+                    </div>
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
+                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Integrated an offline bot chat for instant community support and quick answers.</span></li>
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Streamlined record management and service requests for residents.</span></li>
+                    </ul>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {["TypeScript", "Database", "Offline Bot", "Management"].map(t => (
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
