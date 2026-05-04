@@ -87,24 +87,13 @@ export default function Home() {
         {/* Desktop only */}
         <div className="block">
           <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[6%] top-[8%] w-[90px]" />
-          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[48%] top-[6%] -scale-x-100 w-[85px]" />
-          <img src="/svg/arrow2.svg" alt="" className="decor-faint absolute left-[28%] top-[42%] w-[120px]" />
-
-          <img src="/svg/arrow3.svg" alt="" className="decor-faint absolute right-[20%] top-[10%] w-[110px]" />
+          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[88%] top-[6%] -scale-x-100 w-[85px]" />
+          <img src="/svg/arrow3.svg" alt="" className="decor-faint absolute right-[20%] top-[25%] w-[110px]" />
           <img src="/svg/arrow4.svg" alt="" className="decor-faint absolute right-[26%] bottom-[20%] w-[130px]" />
-          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute right-[8%] bottom-[8%] -scale-x-100 w-[95px]" />
-
-          <img src="/svg/arrow2.svg" alt="" className="decor-faint absolute -left-[5%] top-[18%] w-[100px]" />
           <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute -left-[5%] bottom-[12%] w-[110px]" />
           <img src="/svg/arrow3.svg" alt="" className="decor-faint absolute left-[18%] top-[55%] -scale-x-100 w-[90px]" />
-
-          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute -right-[5%] top-[14%] w-[105px]" />
-          <img src="/svg/arrow2.svg" alt="" className="decor-faint absolute -right-[2%] bottom-[16%] w-[115px]" />
           <img src="/svg/arrow4.svg" alt="" className="decor-faint absolute right-[12%] top-[46%] -scale-x-100 w-[125px]" />
-
-          <img src="/svg/arrow3.svg" alt="" className="decor-faint absolute left-[12%] bottom-[28%] w-[100px]" />
-          <img src="/svg/arrow2.svg" alt="" className="decor-faint absolute right-[42%] top-[34%] -scale-x-100 w-[90px]" />
-          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[60%] bottom-[6%] w-[85px]" />
+          <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[80%] bottom-[6%] w-[85px]" />
         </div>
       </div>
 
