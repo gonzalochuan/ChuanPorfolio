@@ -23,17 +23,12 @@ body {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  overflow-x: hidden;
-  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-@media (max-width: 767px) {
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
+/* iOS Safari fix: overflow-x hidden on html instead of body prevents scroll blocking */
+html {
+  overflow-x: hidden;
 }
 
 /* Brigends display font utility */

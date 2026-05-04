@@ -122,10 +122,10 @@ export default function CardTilt({ children, maxTilt = 12, className = "", disab
   }, [maxTilt, disabled]);
 
   return (
-    <div style={{ perspective: "1200px" }} className={className}>
+    <div style={{ perspective: disabled ? undefined : "1200px", touchAction: 'pan-y' }} className={className}>
       <div
         ref={tiltRef}
-        style={{ position: "relative" }}
+        style={{ position: "relative", touchAction: 'pan-y' }}
       >
         {/* glare highlight */}
         <div ref={glareRef} style={{ position: "absolute", inset: 0, borderRadius: 26, opacity: 0, transition: "opacity 200ms ease", pointerEvents: "none" }} />
