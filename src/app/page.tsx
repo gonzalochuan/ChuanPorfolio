@@ -10,7 +10,7 @@ function Section({ title, children }: SectionProps) {
   );
 }
 
-import React, { useState } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import CardTilt from "@/components/CardTilt";
@@ -18,8 +18,41 @@ import CardTilt from "@/components/CardTilt";
 export default function Home() {
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
   const chatboxVideos = ["/video/mockup5.mp4", "/video/mockup4.mp4", "/video/mockup6.mp4"];
-  const [currentGabayVideo, setCurrentGabayVideo] = useState(0);
-  const [currentChatboxVideo, setCurrentChatboxVideo] = useState(0);
+
+  const gabayVideoRef = useRef<HTMLVideoElement>(null);
+  const gabayIndexRef = useRef(0);
+  const chatboxVideoRef = useRef<HTMLVideoElement>(null);
+  const chatboxIndexRef = useRef(0);
+
+  const playNext = useCallback((ref: React.RefObject<HTMLVideoElement | null>, playlist: string[], indexRef: React.MutableRefObject<number>) => {
+    indexRef.current = (indexRef.current + 1) % playlist.length;
+    const el = ref.current;
+    if (!el) return;
+    el.src = playlist[indexRef.current];
+    el.load();
+    el.play().catch(() => {});
+  }, []);
+
+  // Start playback imperatively on mount for both videos
+  useEffect(() => {
+    const gabay = gabayVideoRef.current;
+    if (gabay) {
+      gabay.src = gabayVideos[0];
+      gabay.load();
+      gabay.play().catch(() => {});
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const chatbox = chatboxVideoRef.current;
+    if (chatbox) {
+      chatbox.src = chatboxVideos[0];
+      chatbox.load();
+      chatbox.play().catch(() => {});
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -328,12 +361,13 @@ export default function Home() {
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
               {/* Main Video Sequence (Looping between Mockup 1 and 2) */}
               <video
-                src={gabayVideos[currentGabayVideo]}
-                autoPlay
+                ref={gabayVideoRef}
                 muted
                 playsInline
-                onEnded={() => setCurrentGabayVideo((prev) => (prev + 1) % gabayVideos.length)}
+                preload="auto"
+                onEnded={() => playNext(gabayVideoRef, gabayVideos, gabayIndexRef)}
                 className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
+                style={{ willChange: 'transform' }}
               />
 
               {/* Dark Gradient Overlay for text readability */}
@@ -368,12 +402,13 @@ export default function Home() {
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
               {/* Main Video Sequence (Looping between Mockup 4, 5, and 6) */}
               <video
-                src={chatboxVideos[currentChatboxVideo]}
-                autoPlay
+                ref={chatboxVideoRef}
                 muted
                 playsInline
-                onEnded={() => setCurrentChatboxVideo((prev) => (prev + 1) % chatboxVideos.length)}
+                preload="auto"
+                onEnded={() => playNext(chatboxVideoRef, chatboxVideos, chatboxIndexRef)}
                 className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+                style={{ willChange: 'transform' }}
               />
 
               {/* Dark Gradient Overlay for text readability */}
