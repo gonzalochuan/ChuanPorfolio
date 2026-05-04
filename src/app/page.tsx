@@ -19,6 +19,7 @@ export default function Home() {
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
   const chatboxVideos = ["/video/mockup5.mp4", "/video/mockup4.mp4", "/video/mockup6.mp4"];
   const barangayVideos = ["/video/mockup7.mp4", "/video/mockup8.mp4", "/video/mockup9.mp4"];
+  const ojtVideos = ["/video/mockup10.mp4", "/video/mockup11.mp4", "/video/mockup12.mp4"];
 
   const gabayVideoRef = useRef<HTMLVideoElement>(null);
   const gabayIndexRef = useRef(0);
@@ -26,6 +27,8 @@ export default function Home() {
   const chatboxIndexRef = useRef(0);
   const barangayVideoRef = useRef<HTMLVideoElement>(null);
   const barangayIndexRef = useRef(0);
+  const ojtVideoRef = useRef<HTMLVideoElement>(null);
+  const ojtIndexRef = useRef(0);
 
   const playNext = useCallback((ref: React.RefObject<HTMLVideoElement | null>, playlist: string[], indexRef: React.MutableRefObject<number>) => {
     indexRef.current = (indexRef.current + 1) % playlist.length;
@@ -63,6 +66,16 @@ export default function Home() {
       barangay.src = barangayVideos[0];
       barangay.load();
       barangay.play().catch(() => { });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const ojt = ojtVideoRef.current;
+    if (ojt) {
+      ojt.src = ojtVideos[0];
+      ojt.load();
+      ojt.play().catch(() => { });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -495,24 +508,42 @@ export default function Home() {
             </div>
           </CardTilt>
 
-          {/* Project 4: River Ranch */}
+          {/* Project 4: OJT System */}
           <CardTilt maxTilt={3} disabled={true}>
-            <div className="bg-zinc-50 border border-zinc-200 rounded-[28px] p-6 md:p-14 lg:p-20 w-full flex flex-col lg:flex-row justify-between gap-6 md:gap-10 group hover:border-black transition-colors duration-500 shadow-2xl relative overflow-hidden min-h-[400px] md:min-h-[500px]">
-              <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-200/50 rounded-full blur-[120px] pointer-events-none group-hover:bg-zinc-300/60 transition-colors duration-700"></div>
-              <div className="relative z-10 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                  <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-black">River Ranch</h3>
-                  <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white rounded-full tracking-wider font-semibold border border-zinc-200 shrink-0 uppercase">Booking App</span>
-                </div>
-                <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 leading-relaxed text-zinc-700">Online Booking System for River Ranch</h4>
-                <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-600 mb-6 md:mb-10 font-hasweny list-none">
-                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Developed an online reservation and booking platform for resort customers.</span></li>
-                  <li className="flex gap-3"><span className="text-black font-bold">✧</span> <span className="leading-relaxed">Organized availability management and customer scheduling.</span></li>
-                </ul>
-                <div className="flex flex-wrap gap-1.5 md:gap-2">
-                  {["TypeScript", "Booking", "UI Design"].map(t => (
-                    <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-200 px-2.5 md:px-4 py-1.5 md:py-2 bg-white rounded-md">{t}</span>
-                  ))}
+            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
+              {/* Main Video Sequence (Looping between Mockup 10, 11, and 12) */}
+              <video
+                ref={ojtVideoRef}
+                muted
+                playsInline
+                preload="auto"
+                onEnded={() => playNext(ojtVideoRef, ojtVideos, ojtIndexRef)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+                style={{ willChange: 'transform' }}
+              />
+
+              {/* Dark Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+
+              {/* Content */}
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                  <div className="max-w-2xl">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">CHED OJT</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">OJT Lifecycle System</span>
+                    </div>
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
+                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Integrated real-time performance monitoring and rubric-based scoring for accurate evaluations.</span></li>
+                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Automated document verification and digital certification with AI evaluation assistance.</span></li>
+                    </ul>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {["TypeScript", "Prisma", "Laravel", "OJT Lifecycle"].map(t => (
+                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
