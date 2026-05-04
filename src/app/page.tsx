@@ -160,12 +160,12 @@ export default function Home() {
           <div className="font-brigends text-outline text-7xl tracking-[0.3em] rotate-[90deg] translate-x-195">HELLO THERE!</div>
         </div>
 
-        {/* mobile vertical banners */}
-        <div className="pointer-events-none absolute left-0 top-[55%] -translate-y-1/2 md:hidden z-10">
+        {/* mobile vertical banners moved and z-indexed for iOS visibility */}
+        <div className="pointer-events-none absolute left-0 top-[55%] -translate-y-1/2 md:hidden z-30">
           <div className="font-brigends text-3xl tracking-[0.2em] select-none" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', color: 'transparent', WebkitTextStroke: '1.5px rgba(0,0,0,0.28)', WebkitTextFillColor: 'transparent' }}>HELLO THERE!</div>
         </div>
-        <div className="pointer-events-none absolute right-0 top-[55%] -translate-y-1/2 md:hidden z-10">
-          <div className="font-brigends text-3xl tracking-[0.2em] select-none" style={{ writingMode: 'vertical-lr', color: 'transparent', WebkitTextStroke: '1.5px rgba(0,0,0,0.28)', WebkitTextFillColor: 'transparent' }}>HELLO THERE!</div>
+        <div className="pointer-events-none absolute right-0 top-[55%] -translate-y-1/2 md:hidden z-30">
+          <div className="font-brigends text-3xl tracking-[0.2em] select-none" style={{ writingMode: 'vertical-rl', color: 'transparent', WebkitTextStroke: '1.5px rgba(0,0,0,0.28)', WebkitTextFillColor: 'transparent' }}>HELLO THERE!</div>
         </div>
 
 
