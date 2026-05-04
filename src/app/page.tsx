@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black" style={{ touchAction: 'pan-y' }}>
       {/* Fixed background arrows - desktop only to avoid mobile touch interference */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-40 md:opacity-100 transition-opacity duration-300">
         {/* Desktop only */}
         <div className="block">
           <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[6%] top-[8%] w-[90px]" />
@@ -343,12 +343,6 @@ export default function Home() {
 
       {/* HUB (Projects Section) */}
       <section id="hub" className="relative container-wide px-6 md:px-8 pt-16 md:pt-32 mt-12 md:mt-24">
-        {/* Background Decors */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
-          <img src="/svg/arrow2.svg" alt="" className="absolute left-[10%] top-[20%] w-[120px] decor-faint -rotate-12" />
-          <img src="/svg/arrow4.svg" alt="" className="absolute right-[5%] bottom-[10%] w-[160px] decor-faint rotate-12" />
-        </div>
-
         <div className="relative z-10 flex flex-col items-center mb-24 md:mb-32">
           <h2 className="font-brigends text-4xl md:text-6xl text-center">HUB</h2>
           <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
