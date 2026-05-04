@@ -83,9 +83,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black" style={{ touchAction: 'pan-y' }}>
       {/* Fixed background arrows - desktop only to avoid mobile touch interference */}
-      <div className="hidden md:block fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Desktop only */}
-        <div className="hidden md:block">
+        <div className="block">
           <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[6%] top-[8%] w-[90px]" />
           <img src="/svg/arrow1.svg" alt="" className="decor-faint absolute left-[48%] top-[6%] -scale-x-100 w-[85px]" />
           <img src="/svg/arrow2.svg" alt="" className="decor-faint absolute left-[28%] top-[42%] w-[120px]" />
@@ -353,14 +353,14 @@ export default function Home() {
       </section>
 
       {/* HUB (Projects Section) */}
-      <section id="hub" className="relative container-wide px-6 md:px-8 pt-16 md:pt-32 mt-12 md:mt-24 bg-white">
+      <section id="hub" className="relative container-wide px-6 md:px-8 pt-16 md:pt-32 mt-12 md:mt-24">
         {/* Background Decors */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
           <img src="/svg/arrow2.svg" alt="" className="absolute left-[10%] top-[20%] w-[120px] decor-faint -rotate-12" />
           <img src="/svg/arrow4.svg" alt="" className="absolute right-[5%] bottom-[10%] w-[160px] decor-faint rotate-12" />
         </div>
 
-        <div className="relative z-10 flex flex-col items-center mb-16 md:mb-24">
+        <div className="relative z-10 flex flex-col items-center mb-24 md:mb-32">
           <h2 className="font-brigends text-4xl md:text-6xl text-center">HUB</h2>
           <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
             <span className="w-8 h-[1px] bg-zinc-400"></span>
@@ -371,51 +371,10 @@ export default function Home() {
       </section>
 
       {/* HUB PROJECTS (Boxed Version) */}
-      <section className="relative container-wide px-6 md:px-8 py-10 md:py-16 bg-white">
+      <section className="relative container-wide px-6 md:px-8 py-10 md:py-16">
         <div className="flex flex-col gap-16 md:gap-24 max-w-[1400px] mx-auto relative z-10">
 
-          {/* Project 1: Gabay (Boxed Video) */}
-          <CardTilt maxTilt={3} disabled={true}>
-            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
-              {/* Main Video Sequence (Looping between Mockup 1 and 2) */}
-              <video
-                ref={gabayVideoRef}
-                muted
-                playsInline
-                preload="auto"
-                onEnded={() => playNext(gabayVideoRef, gabayVideos, gabayIndexRef)}
-                className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
-                style={{ willChange: 'transform' }}
-              />
-
-              {/* Dark Gradient Overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-
-              {/* Content */}
-              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
-                  <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Mobile AR</span>
-                    </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
-                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
-                    </ul>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["Flutter", "Unity", "AR", "Mobile"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardTilt>
-
-          {/* Project 2: ChatBox */}
+          {/* Project 1: ChatBox */}
           <CardTilt maxTilt={3} disabled={true}>
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
               {/* Main Video Sequence (Looping between Mockup 4, 5, and 6) */}
@@ -441,9 +400,9 @@ export default function Home() {
                       <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Progressive Web App</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
-                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Implemented light-weight application support using PWA technologies.</span></li>
+                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Implemented light-weight application support using PWA technologies.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
@@ -461,6 +420,47 @@ export default function Home() {
                     >
                       <span className="relative z-10 uppercase">Visit Project</span>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardTilt>
+
+          {/* Project 2: CHED OJT */}
+          <CardTilt maxTilt={3} disabled={true}>
+            <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
+              {/* Main Video Sequence (Looping between Mockup 10, 11, and 12) */}
+              <video
+                ref={ojtVideoRef}
+                muted
+                playsInline
+                preload="auto"
+                onEnded={() => playNext(ojtVideoRef, ojtVideos, ojtIndexRef)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+                style={{ willChange: 'transform' }}
+              />
+
+              {/* Dark Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+
+              {/* Content */}
+              <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                  <div className="max-w-2xl">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">CHED OJT</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">OJT Lifecycle System</span>
+                    </div>
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
+                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Integrated real-time performance monitoring and rubric-based scoring for accurate evaluations.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Automated document verification and digital certification with AI evaluation assistance.</span></li>
+                    </ul>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {["TypeScript", "Prisma", "OJT Lifecycle"].map(t => (
+                        <span key={t} className="text-[9px] md:text-[11px] uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -493,9 +493,9 @@ export default function Home() {
                       <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Community System</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
-                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Integrated an offline bot chat for instant community support and quick answers.</span></li>
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Organized record management and service requests for residents.</span></li>
+                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Integrated an offline bot chat for instant community support and quick answers.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Organized record management and service requests for residents.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["TypeScript", "Database", "Offline Bot", "Management"].map(t => (
@@ -508,17 +508,17 @@ export default function Home() {
             </div>
           </CardTilt>
 
-          {/* Project 4: OJT System */}
+          {/* Project 4: Gabay */}
           <CardTilt maxTilt={3} disabled={true}>
             <div className="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] rounded-[28px] overflow-hidden bg-black shadow-2xl flex items-end group">
-              {/* Main Video Sequence (Looping between Mockup 10, 11, and 12) */}
+              {/* Main Video Sequence (Looping between Mockup 1 and 2) */}
               <video
-                ref={ojtVideoRef}
+                ref={gabayVideoRef}
                 muted
                 playsInline
                 preload="auto"
-                onEnded={() => playNext(ojtVideoRef, ojtVideos, ojtIndexRef)}
-                className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+                onEnded={() => playNext(gabayVideoRef, gabayVideos, gabayIndexRef)}
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
                 style={{ willChange: 'transform' }}
               />
 
@@ -530,16 +530,16 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
                   <div className="max-w-2xl">
                     <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">CHED OJT</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">OJT Lifecycle System</span>
+                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Mobile AR</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
-                    <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-zinc-400 mb-6 md:mb-10 font-hasweny list-none">
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Integrated real-time performance monitoring and rubric-based scoring for accurate evaluations.</span></li>
-                      <li className="flex gap-3"><span className="text-white font-bold">✧</span> <span className="leading-relaxed">Automated document verification and digital certification with AI evaluation assistance.</span></li>
+                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
+                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["TypeScript", "Prisma", "Laravel", "OJT Lifecycle"].map(t => (
+                      {["Flutter", "Unity", "AR", "Mobile"].map(t => (
                         <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
                       ))}
                     </div>
