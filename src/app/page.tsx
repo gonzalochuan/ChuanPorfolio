@@ -376,34 +376,33 @@ export default function Home() {
 
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                <div className="flex flex-col w-full">
                   <div className="w-full">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
-                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">ChatBox</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Progressive Web App</span>
+                    <div className="flex items-center gap-1.5 sm:gap-4 mb-3 md:mb-6 flex-nowrap w-full">
+                      <h3 className="font-brigends text-[20px] sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white min-w-0 truncate">ChatBox</h3>
+                      <span className="font-hasweny text-[8px] sm:text-[10px] md:text-xs px-1.5 sm:px-3 md:px-4 py-0.5 sm:py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wide sm:tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Progressive Web App</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
-                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                    <h4 className="font-hasweny font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
+                    <ul className="space-y-3 sm:space-y-4 md:space-y-5 text-[13px] sm:text-[14px] md:text-lg text-zinc-300 mb-6 md:mb-12 font-hasweny list-none">
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Developed a real-time chat application with WebSockets, Node.js, and TypeScript.</span></li>
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">PWA technologies were used to implement offline support.</span></li>
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">An API-based messaging system and integrated local storage.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                      ))}
-                    </div>
-                  </div>
 
-                  <div className="flex flex-col items-end shrink-0">
-                    <a
-                      href="http://chat-box-seait.vercel.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20 text-white font-hasweny text-[10px] md:text-xs tracking-[0.15em] font-bold rounded-xl transition-all duration-300 hover:border-white/40"
-                    >
-                      <span className="relative z-10 uppercase">Visit Project</span>
-                    </a>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-6 md:mt-8">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
+                        {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
+                          <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        ))}
+                      </div>
+                      <a
+                        href="http://chat-box-seait.vercel.app/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20 text-white font-hasweny text-[10px] md:text-xs tracking-[0.15em] font-bold rounded-xl transition-all duration-300 hover:border-white/40 self-start shrink-0 w-fit"
+                      >
+                        <span className="relative z-10 uppercase">Visit Project</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -429,21 +428,23 @@ export default function Home() {
 
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                <div className="flex flex-col w-full">
                   <div className="w-full">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
-                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">CHED OJT</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">OJT Lifecycle System</span>
+                    <div className="flex items-center gap-1.5 sm:gap-4 mb-3 md:mb-6 flex-nowrap w-full">
+                      <h3 className="font-brigends text-[20px] sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white min-w-0 truncate">CHED OJT</h3>
+                      <span className="font-hasweny text-[8px] sm:text-[10px] md:text-xs px-1.5 sm:px-3 md:px-4 py-0.5 sm:py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wide sm:tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">OJT Lifecycle System</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
-                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                    <h4 className="font-hasweny font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
+                    <ul className="space-y-3 sm:space-y-4 md:space-y-5 text-[13px] sm:text-[14px] md:text-lg text-zinc-300 mb-6 md:mb-12 font-hasweny list-none">
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Integrated real-time performance monitoring and rubric-based scoring for accurate evaluations.</span></li>
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Automated document verification and digital certification with AI evaluation assistance.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["TypeScript", "Prisma", "OJT Lifecycle"].map(t => (
-                        <span key={t} className="text-[9px] md:text-[11px] uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                      ))}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-6 md:mt-8">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
+                        {["TypeScript", "Prisma", "OJT Lifecycle"].map(t => (
+                          <span key={t} className="text-[9px] md:text-[11px] uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -470,21 +471,23 @@ export default function Home() {
 
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                <div className="flex flex-col w-full">
                   <div className="w-full">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
-                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">Barangay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Community System</span>
+                    <div className="flex items-center gap-1.5 sm:gap-4 mb-3 md:mb-6 flex-nowrap w-full">
+                      <h3 className="font-brigends text-[20px] sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white min-w-0 truncate">Barangay</h3>
+                      <span className="font-hasweny text-[8px] sm:text-[10px] md:text-xs px-1.5 sm:px-3 md:px-4 py-0.5 sm:py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wide sm:tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Community System</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
-                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                    <h4 className="font-hasweny font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
+                    <ul className="space-y-3 sm:space-y-4 md:space-y-5 text-[13px] sm:text-[14px] md:text-lg text-zinc-300 mb-6 md:mb-12 font-hasweny list-none">
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Integrated an offline bot chat for instant community support and quick answers.</span></li>
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Organized record management and service requests for residents.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["TypeScript", "Database", "Offline Bot", "Management"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                      ))}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-6 md:mt-8">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
+                        {["TypeScript", "Database", "Offline Bot", "Management"].map(t => (
+                          <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -511,22 +514,23 @@ export default function Home() {
 
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
+                <div className="flex flex-col w-full">
                   <div className="w-full">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
-                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">Gabay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Mobile AR</span>
+                    <div className="flex items-center gap-1.5 sm:gap-4 mb-3 md:mb-6 flex-nowrap w-full">
+                      <h3 className="font-brigends text-[20px] sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white min-w-0 truncate">Gabay</h3>
+                      <span className="font-hasweny text-[8px] sm:text-[10px] md:text-xs px-1.5 sm:px-3 md:px-4 py-0.5 sm:py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wide sm:tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Mobile AR</span>
                     </div>
-                    <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
-                    <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
+                    <h4 className="font-hasweny font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
+                    <ul className="space-y-3 sm:space-y-4 md:space-y-5 text-[13px] sm:text-[14px] md:text-lg text-zinc-300 mb-6 md:mb-12 font-hasweny list-none">
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">I made a navigation system for devices using Flutter and Unity.</span></li>
                       <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Added UI overlays and real-time location guidance overlays.</span></li>
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Interactive user interface design for a polished campus navigation experience.</span></li>
                     </ul>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                      {["Flutter", "Unity", "AR", "Mobile"].map(t => (
-                        <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
-                      ))}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-6 md:mt-8">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
+                        {["Flutter", "Unity", "AR", "Mobile"].map(t => (
+                          <span key={t} className="text-[9px] md:text-xs uppercase font-bold tracking-widest border border-zinc-700 px-2.5 md:px-4 py-1.5 md:py-2 bg-zinc-800/50 backdrop-blur-md text-zinc-300 rounded-md">{t}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
