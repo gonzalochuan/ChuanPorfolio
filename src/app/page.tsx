@@ -733,6 +733,7 @@ export default function Home() {
                 fill
                 className="object-cover blur-[2px] scale-105"
                 priority
+                unoptimized
               />
             </div>
           ))}
@@ -764,6 +765,7 @@ export default function Home() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                    unoptimized
                   />
                   {/* Eye Icon Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -816,6 +818,7 @@ export default function Home() {
                       alt={`${selectedCert.title} - Page ${i + 1}`}
                       fill
                       className="object-contain"
+                      unoptimized
                     />
                   </div>
                 ))}
@@ -827,6 +830,7 @@ export default function Home() {
                   alt={selectedCert.title}
                   fill
                   className="object-contain"
+                  unoptimized
                 />
               </div>
             )}
