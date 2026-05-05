@@ -10,12 +10,78 @@ function Section({ title, children }: SectionProps) {
   );
 }
 
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import CardTilt from "@/components/CardTilt";
 
+type CertificateData = {
+  id: string;
+  src: string | string[];
+  title: string;
+  description: string;
+};
+
+const certificatesData: CertificateData[] = [
+  { id: "1", src: "/cert/cert1.jfif", title: "Increase SEO Traffic", description: "Coursera Project Network - WordPress SEO" },
+  { id: "2", src: "/cert/cert2.jfif", title: "Build a Free Website", description: "Coursera Project Network - WordPress" },
+  { id: "3", src: "/cert/cert3.jfif", title: "SEO Certified", description: "HubSpot Academy" },
+  { id: "4", src: "/cert/cert4.jfif", title: "Python on the Backend", description: "Udemy Certification" },
+  { id: "5", src: "/cert/cert5.jfif", title: "React 18 Course 2024", description: "Udemy - Learn React JS the fast way" },
+  { id: "6", src: "/cert/cert6.jfif", title: "React Basics", description: "Meta Professional Certificate" },
+  { id: "7", src: "/cert/cert7.jfif", title: "HTML and CSS in depth", description: "Meta Professional Certificate" },
+  { id: "8", src: "/cert/cert8.jfif", title: "Version Control", description: "Meta Professional Certificate" },
+  { id: "9", src: "/cert/cert9.jfif", title: "Programming with JS", description: "Meta Professional Certificate" },
+  { id: "10", src: "/cert/cert10.jfif", title: "Intro to Front-End", description: "Meta Professional Certificate" },
+  { id: "11", src: "/cert/cert11.jfif", title: "Advanced React", description: "Professional Certification" },
+  { id: "12", src: "/cert/cert12.jfif", title: "Web Performance", description: "Professional Certification" },
+  { id: "13", src: "/cert/cert13.jfif", title: "UI/UX Fundamentals", description: "Professional Certification" },
+  { id: "14", src: "/cert/cert14.jfif", title: "Responsive Web Design", description: "Professional Certification" },
+  { id: "15", src: "/cert/cert15.jfif", title: "Python With Flask", description: "Professional Certification" },
+  { id: "16", src: "/cert/cert16.jfif", title: "Data Visualization", description: "Professional Certification" },
+  { id: "17", src: "/cert/cert17.jfif", title: "Data Analysis", description: "Professional Certification" },
+  { id: "18", src: "/cert/cert18.jfif", title: "API Integrations", description: "Professional Certification" },
+  { id: "19", src: "/cert/cert19.jfif", title: "Python Programming", description: "Professional Certification" },
+  { id: "20", src: "/cert/cert20.jfif", title: "Secure Coding", description: "Professional Certification" },
+  { id: "21", src: "/cert/cert21.jfif", title: "Data Science", description: "Professional Certification" },
+  { id: "22", src: "/cert/cert22.jfif", title: "OJT Completion", description: "Professional Certification" },
+  { id: "23", src: "/cert/cert23.jpg", title: "Computer System Servicing NCII", description: "Professional Certification" },
+  { id: "24", src: "/cert/cert24.jfif", title: "Tech Startup Regional", description: "Professional Certification" },
+  { id: "25", src: "/cert/cert25.jpg", title: "CICT Web Design", description: "Professional Certification" },
+  { id: "26", src: "/cert/cert26.jfif", title: "Tech Startup Regional", description: "Professional Certification" },
+  { id: "27", src: ["/cert/cert27.png", "/cert/cert28.png"], title: "Internship Completion", description: "Edufied Pte Ltd & FilPass Verification" },
+];
+
 export default function Home() {
+  // Achievements Slideshow & Certificates Data
+  const achievementPics = [
+    "/cert/pic.jpg",
+    "/cert/pic2.jpg",
+    "/cert/pic3.jpeg",
+    "/cert/pic4.jpg",
+    "/cert/pic5.jpeg",
+    "/cert/pic6.jpeg"
+  ];
+  const [currentPicIndex, setCurrentPicIndex] = useState(0);
+  const [selectedCert, setSelectedCert] = useState<CertificateData | null>(null);
+
+  useEffect(() => {
+    if (selectedCert) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedCert]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentPicIndex((prev) => (prev + 1) % achievementPics.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
   const chatboxVideos = ["/video/mockup5.mp4", "/video/mockup4.mp4", "/video/mockup6.mp4"];
   const barangayVideos = ["/video/mockup7.mp4", "/video/mockup8.mp4", "/video/mockup9.mp4"];
@@ -540,7 +606,7 @@ export default function Home() {
       </section>
 
       {/* UNDERTAKINGS (Professional Experience) */}
-      <section id="undertakings" className="relative w-full px-6 md:px-12 lg:px-20 py-16 md:py-24 overflow-hidden">
+      <section id="undertakings" className="relative w-full px-6 md:px-12 lg:px-20 pt-8 md:pt-12 pb-0 overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-100 rounded-full blur-[120px] opacity-50 pointer-events-none z-0"></div>
 
@@ -551,10 +617,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="relative w-full pb-20 pt-4 md:pt-10 z-10 flex flex-col">
+        <div className="relative w-full pb-8 md:pb-12 pt-4 md:pt-10 z-10 flex flex-col">
 
           {/* Row 1: Academic */}
-          <div className="group flex flex-col md:flex-row md:justify-between border-t border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+          <div className="group flex flex-col md:flex-row md:justify-between py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
             {/* Left Side */}
             <div className="md:w-[45%] mb-10 md:mb-0">
               <div className="font-hasweny text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
@@ -580,7 +646,7 @@ export default function Home() {
           </div>
 
           {/* Row 2: Front-End Developer */}
-          <div className="group flex flex-col md:flex-row-reverse md:justify-between border-t border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+          <div className="group flex flex-col md:flex-row-reverse md:justify-between py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
             {/* Right Side (Visual), Left in DOM: Title */}
             <div className="md:w-[45%] mb-10 md:mb-0 md:text-right">
               <div className="font-hasweny text-xs font-bold md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
@@ -614,7 +680,7 @@ export default function Home() {
           </div>
 
           {/* Row 3: Encoder */}
-          <div className="group flex flex-col md:flex-row md:justify-between border-t border-b border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+          <div className="group flex flex-col md:flex-row md:justify-between py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
             {/* Left Side */}
             <div className="md:w-[45%] mb-10 md:mb-0">
               <div className="font-hasweny text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
@@ -649,6 +715,133 @@ export default function Home() {
 
         </div>
       </section>
+
+      {/* ACHIEVEMENTS */}
+      <section id="achievements" className="relative w-full pt-0 pb-16 md:pb-24 overflow-hidden">
+
+        {/* Top Section: Looping Header */}
+        <div className="relative w-full h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-black mb-16 md:mb-24">
+          {/* Looping Images */}
+          {achievementPics.map((pic, index) => (
+            <div
+              key={pic}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentPicIndex ? 'opacity-50' : 'opacity-0'}`}
+            >
+              <Image
+                src={pic}
+                alt="Achievement Background"
+                fill
+                className="object-cover blur-[2px] scale-105"
+                priority
+              />
+            </div>
+          ))}
+
+          {/* Text Overlay */}
+          <div className="relative z-10 text-center px-4 pointer-events-none">
+            <h2 className="font-brigends text-3xl sm:text-4xl md:text-6xl text-center px-2 text-white drop-shadow-2xl">
+              ACHIEVEMENTS
+            </h2>
+            <div className="font-hasweny text-sm md:text-base tracking-[0.4em] text-white/80 uppercase mb-4 md:mb-6">
+              Milestones & Recognition
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section: Certificates Grid */}
+        <div className="w-full px-4 md:px-12 lg:px-20 max-w-[2000px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            {certificatesData.map((cert) => (
+              <div
+                key={cert.id}
+                className="group flex flex-col items-center cursor-pointer"
+                onClick={() => setSelectedCert(cert)}
+              >
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-zinc-200 border border-zinc-300 shadow-sm transition-transform duration-500 group-hover:scale-105 group-hover:shadow-xl mb-4">
+                  <Image
+                    src={Array.isArray(cert.src) ? cert.src[0] : cert.src}
+                    alt={cert.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                  />
+                  {/* Eye Icon Overlay */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                    <svg className="w-8 h-8 text-white drop-shadow-lg scale-75 group-hover:scale-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="w-12 h-[1px] bg-zinc-400 mb-3 transition-all duration-500 group-hover:w-full group-hover:bg-black"></div>
+                <h4 className="font-hasweny text-[10px] sm:text-xs md:text-sm text-center text-zinc-800 font-bold uppercase tracking-wider transition-colors duration-300">
+                  {cert.title}
+                </h4>
+                <p className="font-hasweny text-[8px] sm:text-[9px] text-center text-zinc-500 uppercase tracking-wide mt-1">
+                  {cert.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </section>
+
+      {/* Lightbox Modal */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 md:p-12 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setSelectedCert(null)}
+        >
+          {/* Close button */}
+          <button
+            className="absolute top-6 right-6 p-2 text-white/70 hover:text-white transition-colors z-50 bg-black/50 rounded-full"
+            onClick={(e) => { e.stopPropagation(); setSelectedCert(null); }}
+          >
+            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <div
+            className="relative w-full h-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {Array.isArray(selectedCert.src) ? (
+              <div className="flex flex-col md:flex-row gap-6 w-full h-full justify-center items-center overflow-auto py-8 hide-scrollbar">
+                {selectedCert.src.map((src, i) => (
+                  <div key={i} className="relative w-full md:w-1/2 h-[50vh] md:h-full min-h-[300px] shrink-0">
+                    <Image
+                      src={src}
+                      alt={`${selectedCert.title} - Page ${i + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="relative w-full h-full">
+                <Image
+                  src={selectedCert.src}
+                  alt={selectedCert.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            )}
+
+            <div className="absolute bottom-[1rem] md:bottom-8 left-1/2 -translate-x-1/2 text-center pointer-events-none z-50">
+              <div className="bg-black/60 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+                <h4 className="font-hasweny text-white font-bold tracking-widest uppercase text-xs md:text-sm">
+                  {selectedCert.title}
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
