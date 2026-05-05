@@ -174,8 +174,8 @@ export default function Home() {
             <h2 className="font-brigends text-3xl md:text-5xl text-center md:text-left mt-2">CORE</h2>
             <h3 className="font-hasweny text-base text-center md:text-[1.3vw] font-semibold tracking-widest mt-6 md:mt-12 md:text-left balance max-w-[30ch] mx-auto md:max-w-none md:mx-0">HELLO I AM GONZALO CHUAN JR</h3>
             <ul className="mt-4 md:mt-8 space-y-3 md:space-y-6 text-zinc-800 text-center md:text-left max-w-[32ch] mx-auto md:max-w-none md:mx-0">
-              <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Web Developer</li>
-              <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Full Stack Developer</li>
+              <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Front-End Developer</li>
+              <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Full-Stack Developer</li>
               <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Freelancer</li>
             </ul>
             <p className="mt-4 md:mt-20 font-hasweny text-sm md:text-[1.3vw] font-semibold leading-relaxed text-zinc-800 max-w-[28ch] md:max-w-prose mx-auto md:mx-0 text-center md:text-left balance">
@@ -346,9 +346,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center mb-24 md:mb-32">
           <h2 className="font-brigends text-4xl md:text-6xl text-center">HUB</h2>
           <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
-            <span className="w-8 h-[1px] bg-zinc-400"></span>
             Selected Projects
-            <span className="w-8 h-[1px] bg-zinc-400"></span>
           </p>
         </div>
       </section>
@@ -542,104 +540,110 @@ export default function Home() {
       </section>
 
       {/* UNDERTAKINGS (Professional Experience) */}
-      <section id="undertakings" className="relative container-wide px-6 md:px-8 py-16 md:py-24 overflow-hidden">
+      <section id="undertakings" className="relative w-full px-6 md:px-12 lg:px-20 py-16 md:py-24 overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-100 rounded-full blur-[120px] opacity-50 pointer-events-none z-0"></div>
 
-        <div className="relative z-10 flex flex-col items-center mb-16 md:mb-20">
-          <h2 className="font-brigends text-4xl md:text-6xl text-center">UNDERTAKINGS</h2>
-          <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
-            <span className="w-8 h-[1px] bg-zinc-400"></span>
-            Professional Experience
-            <span className="w-8 h-[1px] bg-zinc-400"></span>
+        <div className="relative z-10 flex flex-col items-center mb-16 md:mb-20 w-full">
+          <h2 className="font-brigends text-3xl sm:text-4xl md:text-6xl text-center px-2">UNDERTAKINGS</h2>
+          <p className="font-hasweny text-xs sm:text-sm font-bold text-lg md:text-xl mt-4 md:mt-6 text-zinc-600 tracking-widest uppercase text-center px-2">
+            Education & Professional Experience
           </p>
         </div>
 
-        <div className="relative max-w-[1400px] mx-auto w-full pb-10 pt-4 md:pt-10 z-10">
+        <div className="relative w-full pb-20 pt-4 md:pt-10 z-10 flex flex-col">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
-            {/* Experience 1: Edufied */}
-            <div className="group flex flex-col">
-              <div className="border-t border-zinc-200 pt-8 mb-8">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
-                  <h3 className="font-brigends text-3xl xl:text-4xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500">Front-End Developer</h3>
-                  <div className="font-hasweny text-sm tracking-widest text-zinc-400 uppercase shrink-0">
-                    Jan 2025 – Jul 2025
-                  </div>
-                </div>
-                <div className="font-hasweny text-lg text-zinc-500 tracking-widest uppercase">
-                  <span className="font-bold text-black">Edufied</span> <span className="mx-2">—</span> Intern
-                </div>
+          {/* Row 1: Academic */}
+          <div className="group flex flex-col md:flex-row md:justify-between border-t border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+            {/* Left Side */}
+            <div className="md:w-[45%] mb-10 md:mb-0">
+              <div className="font-hasweny text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
+                Academic <span className="mx-3">|</span> 2022 – 2026
               </div>
-
-              <ul className="space-y-4 font-hasweny text-[15px] md:text-[17px] text-zinc-600 flex-1">
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Created responsive user interface elements with Tailwind CSS and React.</span>
-                </li>
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Enhanced UI speed and load time through component rendering optimization.</span>
-                </li>
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Worked together using Jira for task management and Git version control.</span>
-                </li>
-              </ul>
+              <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-black leading-[1.1] mb-6 group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500">
+                Information<br />Technology
+              </h3>
+              <div className="font-hasweny text-lg md:text-xl tracking-widest uppercase">
+                <span className="font-bold text-black">Bachelor of Science</span>
+              </div>
             </div>
 
-            {/* Experience 2: City Hall */}
-            <div className="group flex flex-col">
-              <div className="border-t border-zinc-200 pt-8 mb-8">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
-                  <h3 className="font-brigends text-3xl xl:text-4xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500">Encoder and Trainee</h3>
-                  <div className="font-hasweny text-sm tracking-widest text-zinc-400 uppercase shrink-0">
-                    Jul 2025 – Nov 2025
-                  </div>
-                </div>
-                <div className="font-hasweny text-lg text-zinc-500 tracking-widest uppercase">
-                  <span className="font-bold text-black">City Hall of Koronadal</span> <span className="mx-2">—</span> OJT
-                </div>
+            {/* Right Side */}
+            <div className="md:w-[50%] flex flex-col justify-center">
+              <div className="font-hasweny text-xl md:text-2xl font-bold tracking-widest uppercase mb-6 text-zinc-800">
+                South East Asian Institute of Technology
               </div>
+              <p className="font-hasweny text-[15px] md:text-[17px] font-bold text-zinc-600 leading-relaxed max-w-prose">
+                A comprehensive program focusing on web development, full-stack technologies, system integration, and core software engineering principles.
+              </p>
+            </div>
+          </div>
 
-              <ul className="space-y-4 font-hasweny text-[15px] md:text-[17px] text-zinc-600 flex-1">
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Accurately managed and encoded official documents.</span>
+          {/* Row 2: Front-End Developer */}
+          <div className="group flex flex-col md:flex-row-reverse md:justify-between border-t border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+            {/* Right Side (Visual), Left in DOM: Title */}
+            <div className="md:w-[45%] mb-10 md:mb-0 md:text-right">
+              <div className="font-hasweny text-xs font-bold md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
+                Professional Exp <span className="mx-3">|</span> Jan 2025 – Jul 2025
+              </div>
+              <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-black leading-[1.1] mb-6 group-hover:-translate-x-2 md:group-hover:-translate-x-4 transition-transform duration-500">
+                Front End<br />Developer
+              </h3>
+              <div className="font-hasweny text-lg md:text-xl tracking-widest uppercase">
+                <span className="font-bold text-black">Edufied</span> <span className="text-zinc-600 mx-3">—</span> <span className="text-zinc-600 font-bold">Intern</span>
+              </div>
+            </div>
+
+            {/* Left Side (Visual), Right in DOM: Description */}
+            <div className="md:w-[50%] flex flex-col justify-center">
+              <ul className="space-y-6 font-hasweny text-[15px] md:text-[17px] text-zinc-600">
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxed font-bold text-zinc-600">Created responsive user interface elements with Tailwind CSS and React.</span>
                 </li>
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Helped users with fundamental system functions.</span>
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxed font-bold text-zinc-600">Enhanced UI speed and load time through component rendering optimization.</span>
                 </li>
-                <li className="flex gap-4 items-start">
-                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
-                  <span className="leading-relaxed">Exhibited professionalism and teamwork.</span>
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxe d font-bold text-zinc-600">Worked together using Jira for task management and Git version control.</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* EDUCATION SECTION */}
-          <div className="mt-20 md:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-10">
-                <h2 className="font-brigends text-3xl md:text-5xl text-black leading-none tracking-wider">EDUCATION</h2>
-                <div className="flex-1 h-[1px] bg-zinc-200 ml-2 md:ml-6"></div>
+          {/* Row 3: Encoder */}
+          <div className="group flex flex-col md:flex-row md:justify-between border-t border-b border-zinc-200 py-12 md:py-20 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8">
+            {/* Left Side */}
+            <div className="md:w-[45%] mb-10 md:mb-0">
+              <div className="font-hasweny text-xs md:text-sm font-bold tracking-[0.2em] text-zinc-600 uppercase mb-4">
+                Professional Exp <span className="mx-3">|</span> Jul 2025 – Nov 2025
               </div>
+              <h3 className="font-brigends text-4xl md:text-5xl lg:text-6xl text-black leading-[1.1] mb-6 group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500">
+                Encoder Trainee
+              </h3>
+              <div className="font-hasweny text-lg md:text-xl tracking-widest uppercase">
+                <span className="font-bold text-black">City Hall of Koronadal</span> <span className="text-zinc-600 mx-3">—</span> <span className="text-zinc-600 font-bold">OJT</span>
+              </div>
+            </div>
 
-              <div className="group">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-t border-zinc-200 pt-8 pb-4">
-                  <div className="pr-4">
-                    <h3 className="font-brigends text-2xl md:text-3xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500 mb-4">BS Information Technology</h3>
-                    <div className="font-hasweny text-[15px] md:text-lg text-zinc-500 tracking-widest uppercase">
-                      <span className="font-bold text-black">South East Asian Institute of Technology</span>
-                    </div>
-                  </div>
-                  <div className="font-hasweny text-sm md:text-base tracking-widest text-zinc-400 uppercase shrink-0">
-                    2022 – 2026
-                  </div>
-                </div>
-              </div>
+            {/* Right Side */}
+            <div className="md:w-[50%] flex flex-col justify-center">
+              <ul className="space-y-6 font-hasweny text-[15px] md:text-[17px] text-zinc-600">
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxed font-bold text-zinc-600">Accurately managed and encoded official documents.</span>
+                </li>
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxed font-bold text-zinc-600">Helped users with fundamental system functions.</span>
+                </li>
+                <li className="flex gap-6 items-start">
+                  <span className="text-black font-bold text-xl leading-none mt-1">✧</span>
+                  <span className="leading-relaxed font-bold text-zinc-600">Exhibited professionalism and teamwork.</span>
+                </li>
+              </ul>
             </div>
           </div>
 
