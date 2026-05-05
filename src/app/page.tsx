@@ -22,6 +22,7 @@ type CertificateData = {
   description: string;
 };
 
+
 const certificatesData: CertificateData[] = [
   { id: "1", src: "/cert/cert1.jfif", title: "Increase SEO Traffic", description: "Coursera Project Network - WordPress SEO" },
   { id: "2", src: "/cert/cert2.jfif", title: "Build a Free Website", description: "Coursera Project Network - WordPress" },
@@ -62,8 +63,15 @@ export default function Home() {
     "/cert/pic5.jpeg",
     "/cert/pic6.jpeg"
   ];
-  const [currentPicIndex, setCurrentPicIndex] = useState(0);
   const [selectedCert, setSelectedCert] = useState<CertificateData | null>(null);
+
+  // Preload achievement images on mount for smooth CSS animation
+  useEffect(() => {
+    achievementPics.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     if (selectedCert) {
@@ -73,13 +81,6 @@ export default function Home() {
     }
     return () => { document.body.style.overflow = ''; };
   }, [selectedCert]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentPicIndex((prev) => (prev + 1) % achievementPics.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
 
 
   const gabayVideos = ["/video/mockup.mp4", "/video/mockup2.mp4", "/video/mockup3.mp4"];
@@ -719,24 +720,40 @@ export default function Home() {
       {/* ACHIEVEMENTS */}
       <section id="achievements" className="relative w-full pt-0 pb-16 md:pb-24 overflow-hidden">
 
-        {/* Top Section: Looping Header */}
+        {/* Top Section: Looping Header - Pure CSS Animation */}
         <div className="relative w-full h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-black mb-16 md:mb-24">
-          {/* Looping Images - Simplified for maximum stability */}
-          {achievementPics.map((pic, index) => (
-            <div
-              key={pic}
-              className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentPicIndex ? 'opacity-50' : 'opacity-0'}`}
-            >
-              <Image
-                src={pic}
-                alt="Achievement Background"
-                fill
-                className="object-cover blur-[2px]"
-                priority
-                unoptimized
-              />
-            </div>
-          ))}
+          {/* CSS Keyframe Slideshow - No React state changes, pure GPU animation */}
+          <div className="absolute inset-0 slideshow-container">
+            {achievementPics.map((pic, i) => (
+              <div
+                key={i}
+                className="absolute inset-0 slideshow-slide"
+                style={{ animationDelay: `${i * 4}s` }}
+              >
+                <Image
+                  src={pic}
+                  alt="Achievement Background"
+                  fill
+                  className="object-cover blur-[2px]"
+                  priority
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+          </div>
+
+          <style jsx>{`
+            @keyframes slideshow {
+              0%, 16.66% { opacity: 0.5; }
+              20%, 96.66% { opacity: 0; }
+              100% { opacity: 0.5; }
+            }
+            .slideshow-slide {
+              opacity: 0;
+              animation: slideshow 24s infinite;
+              will-change: opacity;
+            }
+          `}</style>
 
           {/* Static subtle overlay to darken the area slightly more */}
           <div className="absolute inset-0 bg-black/20 z-[5]" />
