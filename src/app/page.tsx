@@ -721,22 +721,25 @@ export default function Home() {
 
         {/* Top Section: Looping Header */}
         <div className="relative w-full h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-black mb-16 md:mb-24">
-          {/* Looping Images */}
+          {/* Looping Images - Simplified for maximum stability */}
           {achievementPics.map((pic, index) => (
             <div
               key={pic}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentPicIndex ? 'opacity-50' : 'opacity-0'}`}
+              className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentPicIndex ? 'opacity-50' : 'opacity-0'}`}
             >
               <Image
                 src={pic}
                 alt="Achievement Background"
                 fill
-                className="object-cover blur-[2px] scale-105"
+                className="object-cover blur-[2px]"
                 priority
                 unoptimized
               />
             </div>
           ))}
+
+          {/* Static subtle overlay to darken the area slightly more */}
+          <div className="absolute inset-0 bg-black/20 z-[5]" />
 
           {/* Text Overlay */}
           <div className="relative z-10 text-center px-4 pointer-events-none">
