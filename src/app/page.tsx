@@ -179,7 +179,7 @@ export default function Home() {
               <li className="font-hasweny text-sm md:text-[1.3vw] font-semibold">✧ Freelancer</li>
             </ul>
             <p className="mt-4 md:mt-20 font-hasweny text-sm md:text-[1.3vw] font-semibold leading-relaxed text-zinc-800 max-w-[28ch] md:max-w-prose mx-auto md:mx-0 text-center md:text-left balance">
-              ✧ Full stack developer with experience building academic systems, capstone projects, and technical documentation. Graduating 4th-year student with freelance experience delivering functional, user-focused web solutions.
+              ✧ Front-End / Full-Stack Developer specializing in React, Next.js, and real-time web applications. Experienced in building responsive UIs, integrating APIs, and developing scalable systems using Node.js and Databases. Strong background in performance optimization and user-centered design.
             </p>
           </div>
           {/* Mobile portrait */}
@@ -354,8 +354,8 @@ export default function Home() {
       </section>
 
       {/* HUB PROJECTS (Boxed Version) */}
-      <section className="relative container-wide px-6 md:px-8 py-10 md:py-16">
-        <div className="flex flex-col gap-16 md:gap-24 max-w-[1400px] mx-auto relative z-10">
+      <section className="relative w-full px-4 md:px-6 lg:px-8 py-10 md:py-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 w-full mx-auto relative z-10">
 
           {/* Project 1: ChatBox */}
           <CardTilt maxTilt={3} disabled={true}>
@@ -377,15 +377,16 @@ export default function Home() {
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
-                  <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">ChatBox</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Progressive Web App</span>
+                  <div className="w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
+                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">ChatBox</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Progressive Web App</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Intranet Communication System</h4>
                     <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Built real-time chat application using TypeScript, Node.js, and WebSockets.</span></li>
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Implemented light-weight application support using PWA technologies.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Developed a real-time chat application with WebSockets, Node.js, and TypeScript.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">PWA technologies were used to implement offline support.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">An API-based messaging system and integrated local storage.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["TypeScript", "Node.js", "WebSockets", "PWA"].map(t => (
@@ -429,10 +430,10 @@ export default function Home() {
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
-                  <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">CHED OJT</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">OJT Lifecycle System</span>
+                  <div className="w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
+                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">CHED OJT</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">OJT Lifecycle System</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Onboarding Monitoring & Evaluation System</h4>
                     <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
@@ -470,10 +471,10 @@ export default function Home() {
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
-                  <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Barangay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Community System</span>
+                  <div className="w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
+                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">Barangay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Community System</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Local Community Service Platform</h4>
                     <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
@@ -511,15 +512,16 @@ export default function Home() {
               {/* Content */}
               <div className="relative z-20 p-6 md:p-14 lg:p-20 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 md:gap-8">
-                  <div className="max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <h3 className="font-brigends text-3xl md:text-5xl lg:text-6xl text-white">Gabay</h3>
-                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0">Mobile AR</span>
+                  <div className="w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 flex-nowrap overflow-visible">
+                      <h3 className="font-brigends text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-white shrink-0">Gabay</h3>
+                      <span className="font-hasweny text-[10px] md:text-xs px-3 md:px-4 py-1 bg-white/10 text-white backdrop-blur-md rounded-full tracking-wider font-semibold border border-white/20 uppercase shrink-0 whitespace-nowrap">Mobile AR</span>
                     </div>
                     <h4 className="font-hasweny font-bold text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 text-zinc-300 leading-relaxed">Campus Navigation Mobile Application</h4>
                     <ul className="space-y-4 md:space-y-5 text-[14px] md:text-lg text-zinc-300 mb-8 md:mb-12 font-hasweny list-none">
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Developed a mobile navigation system using Flutter and Unity integration.</span></li>
-                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Implemented real-time location guidance and AR UI overlays.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">I made a navigation system for devices using Flutter and Unity.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Added UI overlays and real-time location guidance overlays.</span></li>
+                      <li className="flex gap-4"><span className="text-white font-bold text-lg">✧</span> <span className="leading-relaxed">Interactive user interface design for a polished campus navigation experience.</span></li>
                     </ul>
                     <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {["Flutter", "Unity", "AR", "Mobile"].map(t => (
@@ -535,11 +537,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* UNDERTAKINGS (below Tools) */}
-      <section id="undertakings" className="relative container-wide top-5 px-6 md:px-8 py-16 md:py-24">
-        <h2 className="font-brigends text-3xl md:text-5xl text-center mb-8 md:mb-12">Undertakings</h2>
-        <div className="flex justify-center pb-20 pt-10 min-h-[300px]">
-          {/* Content to be added later */}
+      {/* UNDERTAKINGS (Professional Experience) */}
+      <section id="undertakings" className="relative container-wide px-6 md:px-8 py-16 md:py-24 overflow-hidden">
+        {/* Subtle background element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-100 rounded-full blur-[120px] opacity-50 pointer-events-none z-0"></div>
+
+        <div className="relative z-10 flex flex-col items-center mb-16 md:mb-20">
+          <h2 className="font-brigends text-4xl md:text-6xl text-center">UNDERTAKINGS</h2>
+          <p className="font-hasweny text-sm md:text-base mt-6 text-zinc-600 tracking-widest uppercase flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-zinc-400"></span>
+            Professional Experience
+            <span className="w-8 h-[1px] bg-zinc-400"></span>
+          </p>
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto w-full pb-10 pt-4 md:pt-10 z-10">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+            {/* Experience 1: Edufied */}
+            <div className="group flex flex-col">
+              <div className="border-t border-zinc-200 pt-8 mb-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
+                  <h3 className="font-brigends text-3xl xl:text-4xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500">Front-End Developer</h3>
+                  <div className="font-hasweny text-sm tracking-widest text-zinc-400 uppercase shrink-0">
+                    Jan 2025 – Jul 2025
+                  </div>
+                </div>
+                <div className="font-hasweny text-lg text-zinc-500 tracking-widest uppercase">
+                  <span className="font-bold text-black">Edufied</span> <span className="mx-2">—</span> Intern
+                </div>
+              </div>
+
+              <ul className="space-y-4 font-hasweny text-[15px] md:text-[17px] text-zinc-600 flex-1">
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Created responsive user interface elements with Tailwind CSS and React.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Enhanced UI speed and load time through component rendering optimization.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Worked together using Jira for task management and Git version control.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Experience 2: City Hall */}
+            <div className="group flex flex-col">
+              <div className="border-t border-zinc-200 pt-8 mb-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
+                  <h3 className="font-brigends text-3xl xl:text-4xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500">Encoder and Trainee</h3>
+                  <div className="font-hasweny text-sm tracking-widest text-zinc-400 uppercase shrink-0">
+                    Jul 2025 – Nov 2025
+                  </div>
+                </div>
+                <div className="font-hasweny text-lg text-zinc-500 tracking-widest uppercase">
+                  <span className="font-bold text-black">City Hall of Koronadal</span> <span className="mx-2">—</span> OJT
+                </div>
+              </div>
+
+              <ul className="space-y-4 font-hasweny text-[15px] md:text-[17px] text-zinc-600 flex-1">
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Accurately managed and encoded official documents.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Helped users with fundamental system functions.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                  <span className="text-black font-bold text-lg leading-none mt-0.5">✧</span>
+                  <span className="leading-relaxed">Exhibited professionalism and teamwork.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* EDUCATION SECTION */}
+          <div className="mt-20 md:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+            <div className="flex flex-col">
+              <div className="flex items-center gap-3 mb-10">
+                <h2 className="font-brigends text-3xl md:text-5xl text-black leading-none tracking-wider">EDUCATION</h2>
+                <div className="flex-1 h-[1px] bg-zinc-200 ml-2 md:ml-6"></div>
+              </div>
+
+              <div className="group">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-t border-zinc-200 pt-8 pb-4">
+                  <div className="pr-4">
+                    <h3 className="font-brigends text-2xl md:text-3xl text-black leading-none group-hover:translate-x-2 transition-transform duration-500 mb-4">BS Information Technology</h3>
+                    <div className="font-hasweny text-[15px] md:text-lg text-zinc-500 tracking-widest uppercase">
+                      <span className="font-bold text-black">South East Asian Institute of Technology</span>
+                    </div>
+                  </div>
+                  <div className="font-hasweny text-sm md:text-base tracking-widest text-zinc-400 uppercase shrink-0">
+                    2022 – 2026
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>
