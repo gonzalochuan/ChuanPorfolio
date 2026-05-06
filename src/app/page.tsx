@@ -64,6 +64,35 @@ export default function Home() {
     "/cert/pic6.jpeg"
   ];
   const [selectedCert, setSelectedCert] = useState<CertificateData | null>(null);
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    const formData = new FormData(e.currentTarget);
+    try {
+      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_KEY}`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 3000);
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 3000);
+    }
+  };
 
   // Preload achievement images on mount for smooth CSS animation
   useEffect(() => {
@@ -865,6 +894,123 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* NETWORK SECTION - Centered Header + Split Screen Below */}
+      <section id="network" className="w-full bg-white relative overflow-hidden pt-24 md:pt-32">
+
+        {/* Centered Header at the top */}
+        <div className="relative z-10 w-full flex flex-col items-center text-center mb-16 md:mb-24 px-6">
+          <h2 className="font-brigends text-4xl sm:text-5xl md:text-7xl text-black leading-none tracking-tighter mb-4">
+            NETWORK
+          </h2>
+          <div className="font-hasweny text-[10px] md:text-xs tracking-[0.4em] text-zinc-700 uppercase font-bold">
+            Let's Connect & Collaborate
+          </div>
+        </div>
+
+        {/* Split Screen Layout Below Header */}
+        <div className="w-full flex flex-col lg:flex-row min-h-[60vh] lg:min-h-[80vh]">
+
+          {/* Left Side: Contact Information */}
+          <div className="w-full lg:w-[60%] bg-white text-black p-10 md:p-16 lg:p-24 flex flex-col justify-between min-h-[50vh] lg:min-h-0 relative">
+
+            <div className="relative z-10 flex flex-col gap-12 lg:gap-16">
+              <div className="group">
+                <h3 className="font-brigends text-2xl md:text-3xl lg:text-4xl leading-tight text-black/90 group-hover:text-black transition-colors duration-500">
+                  GONZALO MATURAN CHUAN JR.
+                </h3>
+                <div className="flex items-center gap-3 mt-4">
+                  <span className="w-8 h-[1px] bg-zinc-400"></span>
+                  <p className="font-hasweny text-[10px] tracking-[0.2em] text-zinc-800 uppercase font-bold">Koronadal City, South Cotabato, PH 9506</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-6 font-hasweny text-sm md:text-base tracking-[0.1em]">
+                <a href="tel:+639054854383" className="text-zinc-700 hover:text-black transition-all duration-300 flex items-center gap-4 group">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover:bg-black rounded-full transition-colors"></span>
+                  +63 905 485 4383
+                </a>
+                <a href="mailto:chuangonzalo33@gmail.com" className="text-zinc-700 hover:text-black transition-all duration-300 flex items-center gap-4 group">
+                  <span className="w-1.5 h-1.5 bg-zinc-600 group-hover:bg-black rounded-full transition-colors"></span>
+                  chuangonzalo33@gmail.com
+                </a>
+              </div>
+
+              <div className="flex items-center gap-8 pt-6">
+                <a href="https://github.com/gonzalochuan" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-black hover:scale-110 transition-all duration-300">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gonzalo-chuan-2b4466302" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-[#0A66C2] hover:scale-110 transition-all duration-300">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                </a>
+              </div>
+            </div>
+
+            <div className="relative z-10 font-hasweny text-[10px] tracking-[0.3em] text-zinc-700 uppercase mt-20 lg:mt-32 font-bold">
+              © {new Date().getFullYear()} Gonzalo Maturan Chuan Jr.
+            </div>
+          </div>
+
+          {/* Right Side: Contact Form */}
+          <div className="w-full lg:w-[40%] bg-white p-10 md:p-16 lg:p-24 flex items-center justify-center relative border-t lg:border-t-0 lg:border-l border-zinc-50 z-10">
+
+            {formStatus === 'success' ? (
+              <div className="relative z-10 flex flex-col items-center text-center gap-6 animate-in fade-in zoom-in duration-500">
+                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-brigends text-2xl mb-2">MESSAGE SENT</h4>
+                  <p className="font-hasweny text-xs tracking-widest text-zinc-500 uppercase">I'll get back to you soon.</p>
+                </div>
+              </div>
+            ) : (
+              <form className="relative z-10 flex flex-col gap-12 w-full max-w-2xl" onSubmit={handleFormSubmit}>
+                {formStatus === 'error' && (
+                  <p className="text-red-500 font-hasweny text-[10px] uppercase tracking-widest text-center">Something went wrong. Please try again.</p>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="flex flex-col gap-3 group relative">
+                    <label htmlFor="name" className="font-hasweny text-[10px] tracking-[0.2em] text-zinc-800 uppercase font-bold group-focus-within:text-black transition-colors duration-500">Name</label>
+                    <input required type="text" id="name" name="name" className="w-full bg-transparent border-b border-zinc-200 py-4 font-hasweny text-sm md:text-base focus:outline-none transition-all placeholder:text-zinc-400" placeholder="Your Name" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-700 group-focus-within:w-full"></span>
+                  </div>
+                  <div className="flex flex-col gap-3 group relative">
+                    <label htmlFor="email" className="font-hasweny text-[10px] tracking-[0.2em] text-zinc-800 uppercase font-bold group-focus-within:text-black transition-colors duration-500">Email</label>
+                    <input required type="email" id="email" name="email" className="w-full bg-transparent border-b border-zinc-200 py-4 font-hasweny text-sm md:text-base focus:outline-none transition-all placeholder:text-zinc-400" placeholder="your@email.com" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-700 group-focus-within:w-full"></span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 group relative">
+                  <label htmlFor="company" className="font-hasweny text-[10px] tracking-[0.2em] text-zinc-800 uppercase font-bold group-focus-within:text-black transition-colors duration-500">Company</label>
+                  <input type="text" id="company" name="company" className="w-full bg-transparent border-b border-zinc-200 py-4 font-hasweny text-sm md:text-base focus:outline-none transition-all placeholder:text-zinc-400" placeholder="Your Company" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-700 group-focus-within:w-full"></span>
+                </div>
+
+                <div className="flex flex-col gap-3 group relative">
+                  <label htmlFor="message" className="font-hasweny text-[10px] tracking-[0.2em] text-zinc-800 uppercase font-bold group-focus-within:text-black transition-colors duration-500">Message</label>
+                  <textarea required id="message" name="message" rows={5} className="w-full bg-transparent border-b border-zinc-200 py-4 font-hasweny text-sm md:text-base focus:outline-none transition-all resize-none placeholder:text-zinc-400" placeholder="How can we work together?"></textarea>
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-700 group-focus-within:w-full"></span>
+                </div>
+
+                <button
+                  disabled={formStatus === 'sending'}
+                  className="group relative w-full md:w-fit px-16 py-6 bg-black text-white overflow-hidden transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <div className="absolute inset-0 bg-zinc-900 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out"></div>
+                  <span className="relative z-10 font-hasweny font-bold text-[10px] md:text-xs tracking-[0.4em] uppercase transition-colors duration-700">
+                    {formStatus === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}
+                  </span>
+                </button>
+              </form>
+            )}
+          </div>
+
+        </div>
+      </section>
 
     </div>
   );
