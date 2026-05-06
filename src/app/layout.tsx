@@ -40,6 +40,9 @@ const hasweny = localFont({
 export const metadata: Metadata = {
   title: "CHUAN",
   description: "Portfolio of CHUAN",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
