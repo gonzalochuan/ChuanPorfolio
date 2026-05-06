@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   title: "CHUAN",
   description: "Portfolio of CHUAN",
   icons: {
-    icon: "/icon.png",
+    icon: "/icon.svg",
   },
 };
 
